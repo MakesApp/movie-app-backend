@@ -1,5 +1,5 @@
 import express from "express";
-import './DB/mongoose.js'
+import './services/DB/mongoose.js'
 import cors from 'cors'
 const app = express();
 app.use(express.json());
@@ -12,6 +12,5 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
-  console.log(`working together ..`);
 });
 
