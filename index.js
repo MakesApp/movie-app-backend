@@ -1,6 +1,13 @@
 import express from "express";
 import './services/DB/mongoose.js'
 import cors from 'cors'
+import logger from './services/logger/Logger.js'
+
+logger.info('text info')
+logger.warn('text warn')
+logger.error('text error')
+logger.debug('text debug')
+
 const app = express();
 app.use(express.json());
 app.use(cors());
