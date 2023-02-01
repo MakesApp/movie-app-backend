@@ -1,5 +1,4 @@
 const obj = {
-    example:"example"
-}
-console.log(obj);
+	example: 'example',
+};
 export default obj;

@@ -1,7 +1,8 @@
-import express from 'express';
-import './services/DB/mongoose.js';
 import cors from 'cors';
+import express from 'express';
 import router from './components/movies/movie.routes.js';
+import './services/DB/mongoose.js';
+import './services/logger/index.js';
 
 const app = express();
 app.use(express.json());
