@@ -1,19 +1,27 @@
-import express from 'express';
-import './services/DB/mongoose.js';
 import cors from 'cors';
-import logger from './services/logger/index.js';
-
-logger.info('text info', { meta: 1 });
-logger.warn('text warn');
-logger.error('text error');
-logger.debug('text debug');
-logger.error(new Error('something went wrong'));
+import express from 'express';
+import router from './components/movies/movie.routes.js';
+import './services/DB/mongoose.js';
+import './services/logger/index.js';
 
 const app = express();
 app.use(express.json());
+
+app.use((req, res, next) => {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Credentials', 'true');
+	res.header(
+		'Access-Control-Allow-Methods',
+		'GET, POST, PUT, DELETE, PATCH, HEAD'
+	);
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+	next();
+});
+
+app.options('*', cors());
 app.use(cors());
 const PORT = process.env.PORT || 5000;
-// app.use("/api", router);
+app.use('/api', router);
 app.get('/', (req, res) => {
 	res.send('Hello World!');
 });

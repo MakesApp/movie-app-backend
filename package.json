@@ -5,7 +5,7 @@
   "esModules": true,
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",  
+    "dev": "nodemon index.js",
     "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
     "prepare": "husky install"
   },
@@ -19,13 +19,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "joigoose": "^8.0.2",
     "mongoose": "^6.9.0",
     "morgan": "^1.10.0",
-    "winston": "^3.8.2",
-    "joi": "^17.7.0"
-  
-    
-   
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "eslint": "^8.33.0",
@@ -35,8 +33,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.3",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
@@ -49,7 +47,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  
   "main": "index.js",
   "repository": {
     "type": "git",
