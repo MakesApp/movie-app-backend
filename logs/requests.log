@@ -778,3 +778,225 @@
   service: 'user-service',
   timestamp: '2023-02-04T08:14:10.748Z'
 }
+{
+  message: 'PATCH /api/movies/63dcdb08f61721e74b65346b',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:21:54.066Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:22:02.944Z'
+}
+{
+  message: 'GET /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:14:38.909Z'
+}
+{
+  message: 'GET /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:16:08.969Z'
+}
+{
+  message: 'GET /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:17:32.895Z'
+}
+{
+  message: 'GET /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:18:16.247Z'
+}
+{
+  message: 'GET /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:19:00.733Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:22:17.218Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:24:05.401Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:25:20.687Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:25:41.998Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:28:18.622Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:32:06.956Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:32:56.462Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:36:53.556Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:38:16.140Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:40:13.077Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:40:48.334Z'
+}
+{
+  message: 'GET /api/movies/last',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:42:41.800Z'
+}
+{
+  message: 'GET /api/movies/63dbfa6ba82b50983af5e52c',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:43:16.093Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:46:55.369Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:47:47.230Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:49:04.017Z'
+}
+{
+  message: 'GET /api/movies/last',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:59:01.718Z'
+}
+{
+  message: 'GET /api/movies/last',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T09:59:33.388Z'
+}
+{
+  message: 'GET /api/movies/last',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:00:23.183Z'
+}
+{
+  message: 'GET /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:01:34.968Z'
+}
+{
+  message: 'GET /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:02:04.113Z'
+}
+{
+  message: 'POST /api/movies/add',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:03:58.330Z'
+}
+{
+  message: 'Movie added successfully: {"title":"erin brokowich2","releaseDate":"2022-12-31T22:00:00.000Z","genre":"drama","director":"some director2","_id":"63de2d8ec513ff6409380c45","__v":0}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:03:58.655Z'
+}
+{
+  message: 'GET /api/movies/last/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:04:17.420Z'
+}
+{
+  message: 'GET /api/movies/last/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:05:51.790Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:07:14.682Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:07:29.285Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:08:01.607Z'
+}
+{
+  message: 'POST /api/movies/add',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:08:36.024Z'
+}
+{
+  message: 'Movie added successfully: {"title":"erin brokowich3","releaseDate":"2023-12-31T22:00:00.000Z","genre":"drama","director":"some director3","_id":"63de2ea40ab7f4a1396a033f","__v":0}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-04T10:08:36.275Z'
+}

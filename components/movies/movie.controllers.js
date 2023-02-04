@@ -28,7 +28,7 @@ export const getMovieById = async (req, res) => {
 		const movieId = req.params.id;
 		const movie = await Movie.findById(movieId);
 		if (!movie) {
-			res.status(404).send({ error: 'Movie not found' });
+			throw Error('Movie not found');
 		}
 		res.status(200).send({ movie });
 	} catch (error) {
@@ -41,7 +41,7 @@ export const deleteMovie = async (req, res) => {
 		const movieId = req.params.id;
 		const deletedMovie = await Movie.findByIdAndDelete(movieId);
 		if (!deletedMovie) {
-			res.status(400).send({ error: 'Movie not found' });
+			throw Error('Movie not found');
 		}
 		res.status(200).send({ message: 'Movie deleted successfully' });
 	} catch (error) {
@@ -66,7 +66,7 @@ export const updateMovie = async (req, res) => {
 
 export const getLatestMovies = async (req, res) => {
 	try {
-		const movies = await Movie.find().sort({ releaseDate: 'desc' }).limit(4);
+		const movies = await Movie.find().sort({ releaseDate: 'desc' }).limit(5);
 		res.send(movies);
 	} catch (err) {
 		res.status(400).send({ error: err.message });
