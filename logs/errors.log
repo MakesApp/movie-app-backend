@@ -1,0 +1,36 @@
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `xs`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T07:45:53.060Z'
+}
+{
+  message: 'Movie validation failed: genre: Validator failed for path `genre` with value `xs`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T07:47:07.390Z'
+}
+{
+  message: 'Movie validation failed: genre: Validator failed for path `genre` with value `xs`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T07:50:01.477Z'
+}
+{
+  message: 'Movie validation failed: genre: Validator failed for path `genre` with value `sci-fioo`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T08:47:18.819Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T08:48:02.387Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T08:50:30.127Z'
+}
