@@ -3,11 +3,11 @@ import express from 'express';
 
 import {
 	addMovie,
-	// deleteMovies,
+	deleteMovie,
 	getLatestMovies,
-	// getMovieById,
-	// getMovies,
-	// updateMovies,
+	getMovieById,
+	getAllMovies,
+	updateMovie,
 } from './movie.controllers.js';
 
 const router = Router();
@@ -17,12 +17,11 @@ app.use('/api', router);
 
 app.use(express.json());
 
-// router.get('/movies', getMovies);
-// router.get('/movie/:id', getMovieById);
-// router.post('/movies/add', movieSchema, addMovie);
+router.get('/movies', getAllMovies);
+router.get('/movies/:id', getMovieById);
 router.post('/movies/add', addMovie);
-// router.delete('/movies/delete/:id', deleteMovies);
-// router.patch('/movies/update/:id', updateMovies);
+router.delete('/movies/:id', deleteMovie);
+router.patch('/movies/:id', updateMovie);
 router.get('/movies/latest', getLatestMovies);
 
 export default router;

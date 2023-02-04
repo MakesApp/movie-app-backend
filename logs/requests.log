@@ -640,3 +640,141 @@
   service: 'user-service',
   timestamp: '2023-02-03T07:50:01.477Z'
 }
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T07:57:02.197Z'
+}
+{
+  message: 'GET /api/movies/63dcb58c8312aea6a28bcc4e',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T07:58:46.051Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:04:32.317Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:04:52.364Z'
+}
+{
+  message: 'GET /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:05:27.762Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:05:32.421Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf9274b402da05de8c128',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:09:44.148Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:09:51.835Z'
+}
+{
+  message: 'DELETE /api/movies/63dbe39cac8dadd25736672a',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:10:03.821Z'
+}
+{
+  message: 'DELETE /api/movies/63dbe3cdb60ad5c1b4ce0d23',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:10:12.488Z'
+}
+{
+  message: 'DELETE /api/movies/63dbe41fb60ad5c1b4ce0d27',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:10:21.934Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:10:26.103Z'
+}
+{
+  message: 'DELETE /api/movies/63dbe4ae6507b2fa3190bcc9',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:10:56.925Z'
+}
+{
+  message: 'DELETE /api/movies/63dbed37fdb351cea983d590',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:11:04.149Z'
+}
+{
+  message: 'DELETE /api/movies/63dbedb24aead8d52e2abac0',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:11:12.335Z'
+}
+{
+  message: 'DELETE /api/movies/63dbee3ae597a5fcbff0b6aa',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:11:21.040Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:11:23.983Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf9b46af56ed3d12bd73c',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:12:32.074Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf3946df3d6a58c54a10b',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:12:40.938Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf281d152086813178f86',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:12:49.864Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf147535f88f2f8090ce9',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:12:59.698Z'
+}
+{
+  message: 'DELETE /api/movies/63dbf147535f88f2f8090ce9',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:13:01.133Z'
+}
+{
+  message: 'GET /api/movies',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-04T08:14:10.748Z'
+}
