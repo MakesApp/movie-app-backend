@@ -1,5 +1,10 @@
 import logger from '../../services/logger/index.js';
 import Movie from './movie.models.js';
+import axios from 'axios';
+import dotenv from 'dotenv';
+// import { customSort } from '../../utils/helper.js';
+
+dotenv.config();
 
 export const addMovie = async (req, res) => {
 	// console.log(req.body);
@@ -65,10 +70,49 @@ export const updateMovie = async (req, res) => {
 };
 
 export const getLatestMovies = async (req, res) => {
+	const defaultPoster =
+		'https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW92aWUlMjBwb3N0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60';
 	try {
-		const movies = await Movie.find().sort({ releaseDate: 'desc' }).limit(5);
-		res.send(movies);
+		const tmdbResponse = await axios.get(
+			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=20`
+		);
+		const tmdbData = tmdbResponse.data;
+		const tmdbMovies = tmdbData.results.map((movie) => ({
+			name: movie.title,
+			rating: movie.vote_average,
+			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+			year: movie.release_date.substring(0, 4),
+			id: movie.id,
+		}));
+
+		const omdbResponse = await axios.get(
+			`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&type=movie&y=2023&r=json&s=movie`
+		);
+		const omdbData = omdbResponse.data;
+		const omdbMovies = omdbData.Search.map((movie) => ({
+			name: movie.Title,
+			rating: movie.imdbRating,
+			poster: movie.Poster === 'N/A' ? defaultPoster : movie.Poster,
+			year: movie.Year,
+			id: movie.imdbID,
+		}));
+
+		const latestMovies = [...omdbMovies, ...tmdbMovies].slice(0, 20);
+		res.status(200).send(latestMovies);
+
+		// const { data } = await axios.get(
+		// 	`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=1`
+		// );
+		// const { data } = await axios.get(
+		// 	`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&type=movie&y=2023&r=json&s=movie`
+		// );
+		// console.log(data);
+		// const movies = data.results.sort(customSort).slice(0, 9);
+
+		// res.send(movies);
 	} catch (err) {
 		res.status(400).send({ error: err.message });
 	}
 };
+
+// export const getDetailedMovie = async (req, res) => {};
