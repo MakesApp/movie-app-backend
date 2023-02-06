@@ -1390,3 +1390,183 @@
   service: 'user-service',
   timestamp: '2023-02-05T20:31:52.739Z'
 }
+{
+  message: 'GET /api/movies/tt14450856',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T20:48:43.479Z'
+}
+{
+  message: 'GET /api/movies/tt10364034',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T20:49:21.598Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:05:51.146Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:06:24.830Z'
+}
+{
+  message: 'GET /api/movies/tt10364034',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:06:57.786Z'
+}
+{
+  message: 'GET /api/movies/tt10364034',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:19:10.033Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:19:14.345Z'
+}
+{
+  message: 'GET /api/movies/tt10364034',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:19:18.426Z'
+}
+{
+  message: 'GET /api/movies/tt10364034',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:20:33.289Z'
+}
+{
+  message: 'GET /api/movies/tt10364034',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:20:34.777Z'
+}
+{
+  message: 'GET /api/movies/653851',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:20:46.943Z'
+}
+{
+  message: 'GET /api/movies/653851',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:21:00.121Z'
+}
+{
+  message: 'GET /api/movies/653851',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:21:50.210Z'
+}
+{
+  message: 'GET /api/movies/653851',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:22:30.413Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:22:34.168Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:23:01.945Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:23:23.905Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:23:44.975Z'
+}
+{
+  message: 'GET /api/movies/653851',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:23:50.438Z'
+}
+{
+  message: 'GET /api/movies/653851',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:24:13.953Z'
+}
+{
+  message: 'GET /api/movies/653851',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:24:40.447Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:24:49.083Z'
+}
+{
+  message: 'GET /api/movies/tt14317038',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:26:47.319Z'
+}
+{
+  message: 'GET /api/movies/tt14317038',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:27:17.878Z'
+}
+{
+  message: 'GET /api/movies/tt14317038',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:28:30.904Z'
+}
+{
+  message: 'GET /api/movies/tt14317038',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:29:29.067Z'
+}
+{
+  message: 'GET /api/movies/tt14317038',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:30:42.216Z'
+}
+{
+  message: 'GET /api/movies/505642',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:30:55.129Z'
+}
+{
+  message: 'GET /api/movies/tt1285016',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:31:26.500Z'
+}
+{
+  message: 'GET /api/movies/tt1285016',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-05T21:34:10.884Z'
+}
