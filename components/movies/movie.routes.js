@@ -7,6 +7,7 @@ import {
 	getMovieById,
 	getMovies,
 	updateMovies,
+	getTopMovies,
 } from './movie.controllers.js';
 
 const router = Router();
@@ -17,5 +18,6 @@ router.post('/movies/add', addMovie);
 router.delete('/movies/delete/:id', deleteMovies);
 router.patch('/movies/update/:id', updateMovies);
 router.get('/movies/latest', getLatestMovies);
+router.get('/movies/getTopMovies', getTopMovies);
 
 export default router;

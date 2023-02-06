@@ -1,6 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import router from './components/movies/movie.routes.js';
+import { userRoutes } from './components/users/users.routes.js';
 import './services/DB/mongoose.js';
 import './services/logger/index.js';
 
@@ -21,7 +22,7 @@ app.use((req, res, next) => {
 app.options('*', cors());
 app.use(cors());
 const PORT = process.env.PORT || 5000;
-app.use('/api', router);
+app.use('/api', router, userRoutes);
 app.get('/', (req, res) => {
 	res.send('Hello World!');
 });
