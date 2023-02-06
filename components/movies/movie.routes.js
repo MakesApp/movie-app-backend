@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import {
-	// getDetailedMovie,
+	getDetailedMovie,
 	// addMovie,
 	// deleteMovie,
 	// getMovieById,
@@ -13,7 +13,7 @@ import {
 const router = Router();
 
 router.get('/movies/latest', getLatestMovies);
-// router.get('/movies/:id', getDetailedMovie)
+router.get('/movies/:id', getDetailedMovie);
 // router.get('/movies', getAllMovies);
 // router.get('/movies/:id', getMovieById);
 // router.post('/movies/add', addMovie);
