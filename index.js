@@ -2,15 +2,19 @@ import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 import logger from './services/logger/index.js';
-import router from './components/movies/movie.routes.js';
 import './services/DB/mongoose.js';
 import './services/logger/index.js';
 import dotenv from 'dotenv';
+import movieRouter from './components/movies/movie.routes.js';
 
 dotenv.config();
 const app = express();
+
 app.use(express.json());
 app.use(morgan('dev'));
+
+app.options('*', cors());
+app.use(cors());
 
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -24,10 +28,8 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.options('*', cors());
-app.use(cors());
 const PORT = process.env.PORT || 5000;
-app.use('/api/movies', router);
+app.use('/api/movies', movieRouter);
 
 app.listen(PORT, () => {
 	console.log(`Server started on port ${PORT}`);

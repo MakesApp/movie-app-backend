@@ -2,9 +2,9 @@ import { Router } from 'express';
 
 import { getDetailedMovie, getLatestMovies } from './movie.controllers.js';
 
-const router = Router();
+const movieRouter = Router();
 
-router.get('/latest', getLatestMovies);
-router.get('/:id', getDetailedMovie);
+movieRouter.get('/latest', getLatestMovies);
+movieRouter.get('/:id', getDetailedMovie);
 
-export default router;
+export default movieRouter;
