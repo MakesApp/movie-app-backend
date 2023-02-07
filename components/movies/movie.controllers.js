@@ -1,11 +1,10 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import {
+	defaultActorPoster,
+	defaultPoster,
+} from './constants/movies.constants.js';
 
 export const getLatestMovies = async (req, res) => {
-	const defaultPoster =
-		'https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW92aWUlMjBwb3N0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60';
 	const { limit = 20 } = req.query;
 	try {
 		const tmdbResponse = await axios.get(
@@ -16,7 +15,7 @@ export const getLatestMovies = async (req, res) => {
 			name: movie.title,
 			rating: movie.vote_average,
 			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
-			year: movie.release_date.substring(0, 4),
+			year: new Date(movie.release_date).getYear(),
 			id: movie.id,
 		}));
 
@@ -47,18 +46,12 @@ export const getDetailedMovie = async (req, res) => {
 			`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_API_KEY}`
 		);
 		const tmdbData = tmdbResponse.data;
-		// console.log(tmdbData);
 
-		// res.status(200).send(tmdbData);
 		const omdbResponse = await axios.get(
 			`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${id}`
 			// `http://www.omdbapi.com/?apikey=ad0870b9&i=tt14317038`
 		);
 		const omdbData = omdbResponse.data;
-
-		console.log('omdb', omdbData.Ratings);
-		console.log('----------------------------------');
-		console.log('tmdb', tmdbData.Ratings);
 
 		const movieData = {
 			poster: tmdbData.poster_path || omdbData.Poster,
@@ -83,9 +76,7 @@ export const getDetailedMovie = async (req, res) => {
 					? tmdbData.credits.cast.map((actor) => ({
 							name: actor.name,
 							character: actor.character,
-							image:
-								actor.profile_path ||
-								'https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0JTIwbWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+							image: actor.profile_path || defaultActorPoster,
 					  }))
 					: {
 							runTime: omdbData.Runtime || 'N/A',
@@ -95,7 +86,6 @@ export const getDetailedMovie = async (req, res) => {
 							language: tmdbData.original_language,
 					  },
 		};
-		// console.log(movieData);
 		res.status(200).send(movieData);
 	} catch (error) {
 		res.status(404).send({ error: error.message });

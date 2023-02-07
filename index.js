@@ -5,7 +5,9 @@ import logger from './services/logger/index.js';
 import router from './components/movies/movie.routes.js';
 import './services/DB/mongoose.js';
 import './services/logger/index.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
@@ -25,10 +27,7 @@ app.use((req, res, next) => {
 app.options('*', cors());
 app.use(cors());
 const PORT = process.env.PORT || 5000;
-app.use('/api', router);
-// app.get('/', (req, res) => {
-// 	res.send('Hello World!');
-// });
+app.use('/api/movies', router);
 
 app.listen(PORT, () => {
 	console.log(`Server started on port ${PORT}`);
