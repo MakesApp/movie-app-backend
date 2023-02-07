@@ -706,3 +706,117 @@
   service: 'user-service',
   timestamp: '2023-02-03T08:50:30.127Z'
 }
+{
+  message: 'Movie added successfully: {"title":"The Matrix3","releaseDate":"1993-03-31","genre":"sci-fio","director":"reut"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-04T16:41:21.215Z'
+}
+{
+  message: 'Movie validation failed: genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-04T16:41:21.255Z'
+}
+{
+  message: 'Movie added successfully: {}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-05T11:35:16.677Z'
+}
+{
+  message: 'Movie added successfully: {"title":"The Matrix3","releaseDate":"1993-03-31","genre":"sci-fio","director":""}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-05T11:35:24.906Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-05T11:35:24.928Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-05T11:40:59.349Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:29:58.727Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:35:39.030Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:41:20.667Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:41:45.025Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:42:05.463Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:54:29.941Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:55:13.047Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:55:28.592Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T19:56:10.211Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-06T21:16:24.296Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-07T06:16:54.473Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-07T06:19:48.669Z'
+}
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `sci-fio`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-07T06:20:04.081Z'
+}

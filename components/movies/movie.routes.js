@@ -1,24 +1,23 @@
 import { Router } from "express";
-import express from "express";
-
-import {
-  addMovie,
-  // deleteMovies,
-  getLatestMovies,
-  // getMovieById,
-  // getMovies,
-  // updateMovies,
-} from "./movie.controllers.js";
 import { asyncWrapper } from "../../middleware/asyncWrapper.js";
 
-const movieRouter = Router();
+import {
+  // addMovie,
+  // deleteMovie,
+  // getMovieById,
+  // getAllMovies,
+  // updateMovie,
+  // getLatestMovies,
+  productControllers,
+} from "./movie.controllers.js";
 
-// router.get('/movies', getMovies);
-// router.get('/movie/:id', getMovieById);
-// router.post('/movies/add', movieSchema, addMovie);
-movieRouter.post("/movies/add", asyncWrapper(addMovie));
-// router.delete('/movies/delete/:id', deleteMovies);
-// router.patch('/movies/update/:id', updateMovies);
-movieRouter.get("/movies/latest", asyncWrapper(getLatestMovies));
+const router = Router();
 
-export default movieRouter;
+// router.get("/movies/latest", asyncWrapper(getLatestMovies));
+// router.get("/movies", asyncWrapper(getAllMovies));
+// router.get("/movies/:id", asyncWrapper(getMovieById));
+router.post("/movies/add", productControllers.addMovie);
+// router.delete("/movies/:id", asyncWrapper(deleteMovie));
+// router.patch("/movies/:id", asyncWrapper(updateMovie));
+
+export default router;
