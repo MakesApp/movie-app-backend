@@ -3,12 +3,12 @@ import { User } from './users.models.js';
 export const addUserFavorite = async (req, res) => {
 	try {
 		const userId = req.params.userId;
-		const movie = req.body;
+		const movieId = req.body;
 
 		const user = await User.findById(userId);
 		if (!user) return res.status(404).send('User not found');
 
-		user.favorites.push(movie);
+		user.favorites.push(movieId);
 		const result = await user.save();
 
 		res.send(result);
@@ -16,6 +16,7 @@ export const addUserFavorite = async (req, res) => {
 		res.status(500).send(err);
 	}
 };
+
 export const getUserFavorites = async (req, res) => {
 	const { userId } = req.params;
 
