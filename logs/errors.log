@@ -16,3 +16,51 @@
   service: 'user-service',
   timestamp: '2023-02-03T07:50:01.477Z'
 }
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:44:51.121Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:45:40.320Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:46:25.712Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:52:19.608Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:52:44.303Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:55:45.282Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:55:56.444Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:56:51.042Z'
+}

@@ -6,8 +6,11 @@ import './services/DB/mongoose.js';
 import './services/logger/index.js';
 import dotenv from 'dotenv';
 import movieRouter from './components/movies/movie.routes.js';
+import { notFoundRoute } from './middleware/not-found-middleware.js';
+import { errorHandlerMiddleware } from './middleware/error-handler-middleware.js';
 
 dotenv.config();
+
 const app = express();
 
 app.use(express.json());
@@ -30,6 +33,8 @@ app.use((req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 app.use('/api/movies', movieRouter);
+app.use(notFoundRoute);
+app.use(errorHandlerMiddleware);
 
 app.listen(PORT, () => {
 	console.log(`Server started on port ${PORT}`);

@@ -1,12 +1,9 @@
 import axios from 'axios';
-import {
-	defaultActorPoster,
-	defaultPoster,
-} from './constants/movies.constants.js';
-
-export const getLatestMovies = async (req, res) => {
-	const { limit = 20 } = req.query;
-	try {
+import { asyncWrapper } from '../../middleware/asyncWrapper.js';
+import { defaultActorPoster, defaultPoster } from './movies.constants.js';
+export const moviesController = {
+	getLatestMovies: asyncWrapper(async (req, res) => {
+		const { limit = 20 } = req.query;
 		const tmdbResponse = await axios.get(
 			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}`
 		);
@@ -18,10 +15,10 @@ export const getLatestMovies = async (req, res) => {
 			year: new Date(movie.release_date).getYear(),
 			id: movie.id,
 		}));
-
 		const omdbResponse = await axios.get(
 			`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&type=movie&y=2023&r=json&s=movie`
 		);
+
 		const omdbData = omdbResponse.data;
 		const omdbMovies = omdbData.Search.map((movie) => ({
 			name: movie.Title,
@@ -30,16 +27,12 @@ export const getLatestMovies = async (req, res) => {
 			year: movie.Year,
 			id: movie.imdbID,
 		}));
-
+		res.send(omdbMovies);
 		const latestMovies = [...omdbMovies, ...tmdbMovies].slice(0, limit);
 		res.status(200).send(latestMovies);
-	} catch (err) {
-		res.status(400).send({ error: err.message });
-	}
-};
+	}),
 
-export const getDetailedMovie = async (req, res) => {
-	try {
+	getDetailedMovie: asyncWrapper(async (req, res) => {
 		const { id } = req.params;
 
 		const tmdbResponse = await axios.get(
@@ -87,7 +80,5 @@ export const getDetailedMovie = async (req, res) => {
 					  },
 		};
 		res.status(200).send(movieData);
-	} catch (error) {
-		res.status(404).send({ error: error.message });
-	}
+	}),
 };
