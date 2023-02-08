@@ -91,3 +91,26 @@ export const getDetailedMovie = async (req, res) => {
 		res.status(404).send({ error: error.message });
 	}
 };
+
+export const getTopMovies = async (req, res) => {
+	try {
+		const page = req.query.page || 1;
+
+		const response = await axios.get(
+			`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${page}`
+		);
+		const data = response.data;
+
+		const topMovies = data.results.map((movie) => ({
+			name: movie.title,
+			rating: movie.vote_average,
+			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+			year: movie.release_date.slice(0, 4),
+			id: movie.id,
+		}));
+
+		res.send(topMovies);
+	} catch (err) {
+		res.status(500).send(err);
+	}
+};
