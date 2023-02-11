@@ -1,8 +1,6 @@
 import axios from 'axios';
-import {
-	defaultActorPoster,
-	defaultPoster,
-} from './constants/movies.constants.js';
+import { shuffleMovies } from '../../utils/helper.js';
+import { defaultActorPoster, defaultPoster } from './movies.constants.js';
 
 export const getLatestMovies = async (req, res) => {
 	const { limit = 20 } = req.query;
@@ -89,5 +87,27 @@ export const getDetailedMovie = async (req, res) => {
 		res.status(200).send(movieData);
 	} catch (error) {
 		res.status(404).send({ error: error.message });
+	}
+};
+
+export const getRandomGreatMovies = async (req, res) => {
+	try {
+		const page = req.query.page || 1;
+		const response = await axios.get(
+			`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${page}`
+		);
+		const data = response.data;
+		let topMovies = data.results.map((movie) => ({
+			name: movie.title,
+			rating: movie.vote_average,
+			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+			year: new Date(movie.release_date).getYear(),
+			id: movie.id,
+			description: movie.overview,
+		}));
+		const shuffledMovies = shuffleMovies(topMovies);
+		res.send(shuffledMovies);
+	} catch (error) {
+		res.status(500).send(error);
 	}
 };
