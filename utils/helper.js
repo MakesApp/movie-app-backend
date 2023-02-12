@@ -6,15 +6,15 @@ export const customSort = (a, b) => {
 	return 0;
 };
 
-export const shuffleMovies = (topMovies) => {
+export const shuffleArray = (array, shuffledItems) => {
 	const randomNumbers = [];
 	const newData = [];
 	let ranNumber = null;
-	for (let i = 0; i < 5; i++) {
-		ranNumber = Math.floor(Math.random() * topMovies.length);
+	for (let i = 0; i < shuffledItems; i++) {
+		ranNumber = Math.floor(Math.random() * array.length);
 		if (!randomNumbers.includes(ranNumber)) {
 			randomNumbers.push(ranNumber);
-			newData.push(topMovies[ranNumber]);
+			newData.push(array[ranNumber]);
 		} else {
 			i--;
 		}

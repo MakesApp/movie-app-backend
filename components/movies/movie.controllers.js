@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { shuffleMovies } from '../../utils/helper.js';
+import { shuffleArray } from '../../utils/helper.js';
 import { defaultActorPoster, defaultPoster } from './movies.constants.js';
 
 export const getLatestMovies = async (req, res) => {
@@ -105,7 +105,7 @@ export const getRandomGreatMovies = async (req, res) => {
 			id: movie.id,
 			description: movie.overview,
 		}));
-		const shuffledMovies = shuffleMovies(topMovies);
+		const shuffledMovies = shuffleArray(topMovies, 5);
 		res.send(shuffledMovies);
 	} catch (error) {
 		res.status(500).send(error);
