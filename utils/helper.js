@@ -5,3 +5,19 @@ export const customSort = (a, b) => {
 	else if (dateA < dateB) return 1;
 	return 0;
 };
+
+export const shuffleArray = (array, shuffledItems = array.length) => {
+	const randomNumbers = [];
+	const newData = [];
+	let ranNumber = null;
+	for (let i = 0; i < shuffledItems; i++) {
+		ranNumber = Math.floor(Math.random() * array.length);
+		if (!randomNumbers.includes(ranNumber)) {
+			randomNumbers.push(ranNumber);
+			newData.push(array[ranNumber]);
+		} else {
+			i--;
+		}
+	}
+	return newData;
+};
