@@ -41,3 +41,14 @@ export const logout = (req, res, next) => {
 	});
 	res.send('logging out');
 };
+
+// export const googleAuth = () => {
+// 	passport.authenticate('google', { scope: ['email', 'profile'] });
+// };
+
+// export const resFromGoogle = () => {
+// 	passport.authenticate('google', {
+// 		successRedirect: '/movies',
+// 		failureRedirect: '/login',
+// 	});
+// };
