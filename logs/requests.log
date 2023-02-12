@@ -2194,3 +2194,21 @@
   service: 'user-service',
   timestamp: '2023-02-12T13:07:51.301Z'
 }
+{
+  message: 'GET /api/movies/random',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:43:00.406Z'
+}
+{
+  message: 'GET /api/movies/random',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:43:15.875Z'
+}
+{
+  message: 'GET /api/movies/random',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:43:23.422Z'
+}

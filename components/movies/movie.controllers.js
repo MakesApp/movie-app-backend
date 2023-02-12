@@ -105,7 +105,7 @@ export const getRandomGreatMovies = async (req, res) => {
 			id: movie.id,
 			description: movie.overview,
 		}));
-		const shuffledMovies = shuffleArray(topMovies, 5);
+		const shuffledMovies = shuffleArray(topMovies);
 		res.send(shuffledMovies);
 	} catch (error) {
 		res.status(500).send(error);

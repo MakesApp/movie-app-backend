@@ -6,7 +6,7 @@ export const customSort = (a, b) => {
 	return 0;
 };
 
-export const shuffleArray = (array, shuffledItems) => {
+export const shuffleArray = (array, shuffledItems = array.length) => {
 	const randomNumbers = [];
 	const newData = [];
 	let ranNumber = null;
