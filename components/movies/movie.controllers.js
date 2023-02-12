@@ -114,3 +114,33 @@ export const getTopMovies = async (req, res) => {
 		res.status(500).send(err);
 	}
 };
+
+export const searchMovie = async (req, res) => {
+	try {
+		const searchTerm = req.query.searchTerm;
+		const response = await axios.get(
+			`https://api.themoviedb.org/3/search/multi?api_key=${process.env.TMDB_API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`
+		);
+		const results = response.data.results;
+
+		const filteredResults = results.map((result) => {
+			if (result.media_type === 'movie') {
+				return {
+					name: result.title,
+					rating: result.vote_average,
+					poster: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
+					year: result.release_date.substring(0, 4),
+				};
+			} else if (result.media_type === 'person') {
+				return {
+					name: result.name,
+					poster: `https://image.tmdb.org/t/p/w500${result.profile_path}`,
+				};
+			}
+		});
+
+		res.send(filteredResults);
+	} catch (err) {
+		res.status(500).send(err);
+	}
+};
