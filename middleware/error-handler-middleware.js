@@ -1,11 +1,11 @@
 import { StatusCodes } from 'http-status-codes';
 
-export const errorHandlerMiddleware = (err, req, res) => {
+// eslint-disable-next-line no-unused-vars
+export const errorHandlerMiddleware = (err, req, res, next) => {
 	let customError = {
 		statusCode: err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
 		msg: err.message || 'Something went wrong, try again later.',
 	};
-
 	if (err.code === 11000) {
 		customError.statusCode = StatusCodes.BAD_REQUEST;
 		customError.msg = `${Object.keys(err.keyValue)} already exist!`;
@@ -23,6 +23,5 @@ export const errorHandlerMiddleware = (err, req, res) => {
 		customError.statusCode = StatusCodes.NOT_FOUND;
 		customError.msg = `No item found with id: ${err.value}`;
 	}
-
 	res.status(customError.statusCode).json({ errMsg: customError.msg });
 };

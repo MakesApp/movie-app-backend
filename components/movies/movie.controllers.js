@@ -2,7 +2,8 @@ import axios from 'axios';
 import { asyncWrapper } from '../../middleware/asyncWrapper.js';
 import { defaultActorPoster, defaultPoster } from './movies.constants.js';
 export const moviesController = {
-	getLatestMovies: asyncWrapper(async (req, res) => {
+	// eslint-disable-next-line no-unused-vars
+	getLatestMovies: asyncWrapper(async (req, res, next) => {
 		const { limit = 20 } = req.query;
 		const tmdbResponse = await axios.get(
 			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}`

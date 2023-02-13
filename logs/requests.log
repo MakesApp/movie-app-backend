@@ -2266,3 +2266,1209 @@
   service: 'user-service',
   timestamp: '2023-02-08T11:56:51.042Z'
 }
+{
+  message: 'GET /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:27:45.530Z'
+}
+{
+  message: 'GET /movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:28:21.427Z'
+}
+{
+  message: 'GET /movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:28:30.568Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:29:08.855Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:29:09.735Z'
+}
+{
+  message: 'GET /api/movies/latest%D7%97',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:30:54.198Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:30:54.423Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:31:07.110Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:31:07.485Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:53:21.955Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:53:22.554Z'
+}
+{
+  message: 'GET /api/movies/tt15486810',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:53:52.589Z'
+}
+{
+  message: 'Success: {"username":5454,"password":"reut12345"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:53:53.251Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:54:01.107Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:54:01.326Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:56:31.912Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:56:32.122Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:33.085Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:33.171Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:44.984Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:45.095Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:58.094Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:58.183Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:11.660Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:11.764Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:46.274Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:46.381Z'
+}
+{
+  message: 'GET /api/movies/tt1548681k',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:56.916Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:57.178Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:14.381Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:14.482Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:17.870Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:17.917Z'
+}
+{
+  message: 'GET /api/movies/latest',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:27.894Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:28.170Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:28.783Z'
+}
+{
+  message: 'GET /api/movies/tt15486810',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:39.903Z'
+}
+{
+  message: 'Success: {"username":5454,"password":"reut12345"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:40.435Z'
+}
+{
+  message: 'GET /api/movies/tt15486810',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:45.479Z'
+}
+{
+  message: 'Success: {"username":5454,"password":"reut12345"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:45.676Z'
+}
+{
+  message: 'GET /api/movies/tt15486810',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:22.364Z'
+}
+{
+  message: 'Success: {"username":5454,"password":"reut12345"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:22.743Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:28.108Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:28.154Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:39.398Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:39.494Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:57.512Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:57.634Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:01:16.099Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:01:16.219Z'
+}
+{
+  message: 'GET /api/movies/tt1548681',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:01:39.466Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:01:39.596Z'
+}
+{
+  message: 'POST /user/register',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:03:22.808Z'
+}
+{
+  message: 'POST /users/register',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:03:35.967Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:18:42.301Z'
+}
+{
+  message: 'Success: {"name":"reut100","number":"1500000"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:18:42.537Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:19:12.594Z'
+}
+{
+  message: 'Success: {"name":54545,"number":"1500000"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:19:12.760Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:19:49.478Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:19:49.504Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:22:34.240Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:22:34.246Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:22:57.104Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:22:57.137Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:23:37.124Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:23:37.149Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:24:57.476Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:24:57.510Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:25:26.583Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:25:26.614Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:26:55.277Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:26:55.321Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:28:40.266Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:28:40.294Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:29:06.776Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:29:06.804Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:30:00.923Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:30:00.947Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:30:44.588Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:30:44.617Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:31:18.744Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:31:18.823Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:32:27.550Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:32:27.580Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:32:55.824Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:32:55.865Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:33:40.601Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:33:40.632Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:34:00.330Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:34:00.386Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:35:59.427Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:35:59.461Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:36:28.379Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:36:28.410Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:37:29.030Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:37:29.058Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:38:12.530Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:38:12.564Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:39:20.201Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:39:20.255Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:40:01.249Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:40:01.279Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:41:23.149Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:41:23.178Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:43:13.220Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:43:13.256Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:43:29.554Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:43:29.589Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:44:31.230Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:44:31.255Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:45:16.944Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:45:16.969Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:48:47.310Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:48:47.320Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:49:45.117Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:49:45.159Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:53:59.004Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:53:59.029Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:54:13.407Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:54:13.411Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:54:31.659Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:54:31.712Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:56:16.832Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:56:16.857Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:56:46.299Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:56:46.303Z'
+}
+{
+  message: 'POST /api/movies/jj',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:29.495Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:34.466Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:34.485Z'
+}
+{
+  message: 'GET /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:43.235Z'
+}
+{
+  message: 'GET /api/movies/l,l,l,',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:53.359Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:53.640Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:04:13.811Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:04:13.850Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:04:56.998Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:04:57.177Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:21.059Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:21.245Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:22.583Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:22.751Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:52.720Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:54.270Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:07:24.182Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:07:26.320Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:07:57.749Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:07:59.485Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:02.645Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:02.818Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:13.596Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:13.762Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:39.881Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:40.044Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:10:09.859Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:10:11.162Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:10:55.217Z'
+}
+{
+  message: 'Success: {"name":"54545","number":"fsdsfs"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:10:55.420Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:11:05.699Z'
+}
+{
+  message: 'Success: {"name":"54545","number":"fsdsfs","number10":"fsdsfs"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:11:05.872Z'
+}
+{
+  message: 'GET /users/regi',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:13:10.333Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:13:38.424Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:13:38.433Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:13:51.864Z'
+}
+{
+  message: 'Success: {"username":5454,"number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:13:52.039Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:14:45.335Z'
+}
+{
+  message: 'Success: {"name":5454,"number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:14:45.555Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:14:48.913Z'
+}
+{
+  message: 'Success: {"name":5454,"number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:14:49.097Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:14:53.992Z'
+}
+{
+  message: 'Success: {"name":5454,"number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:14:54.195Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:15:41.393Z'
+}
+{
+  message: 'Success: {"name":5454,"number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:15:41.562Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:01.094Z'
+}
+{
+  message: 'Success: {"name":5454,"number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:01.262Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:06.326Z'
+}
+{
+  message: 'Success: {"name":5454,"number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:06.496Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:19.417Z'
+}
+{
+  message: 'Success: {"name":"5454","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:19.615Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:22.816Z'
+}
+{
+  message: 'Success: {"name":"5454","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:16:22.988Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:17:50.260Z'
+}
+{
+  message: 'Success: {"name":"5454","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:17:52.768Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:17:54.645Z'
+}
+{
+  message: 'Success: {"name":"5454","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:17:54.825Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:00.764Z'
+}
+{
+  message: 'Success: {"name":"reut","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:00.945Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:02.808Z'
+}
+{
+  message: 'Success: {"name":"reut","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:02.989Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:04.496Z'
+}
+{
+  message: 'Success: {"name":"reut","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:04.673Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:37.133Z'
+}
+{
+  message: 'Success: {"name":"reut120@gmail.com","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:37.304Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:39.073Z'
+}
+{
+  message: 'Success: {"name":"reut120@gmail.com","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:39.238Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:41.547Z'
+}
+{
+  message: 'Success: {"name":"reut120@gmail.com","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:18:41.712Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:19:16.019Z'
+}
+{
+  message: 'Success: {"name":"reut120@gmail.com","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:19:17.131Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:19:20.164Z'
+}
+{
+  message: 'Success: {"name":"reut120@gmail.com","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:19:20.333Z'
+}
+{
+  message: 'POST /api/movies/',
+  level: 'info',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:19:24.607Z'
+}
+{
+  message: 'Success: {"name":"reut120@gmail.com","number":"sdsdsds"}',
+  level: 'debug',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:19:24.774Z'
+}

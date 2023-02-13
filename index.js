@@ -33,8 +33,9 @@ app.use((req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 app.use('/api/movies', movieRouter);
-app.use(notFoundRoute);
+
 app.use(errorHandlerMiddleware);
+app.use(notFoundRoute);
 
 app.listen(PORT, () => {
 	console.log(`Server started on port ${PORT}`);
