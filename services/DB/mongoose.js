@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import dotenv from 'dotenv'
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 const MONGO_URL = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASSWORD}@moviecluster.gpx1i3n.mongodb.net/?retryWrites=true&w=majority`;
-
+mongoose.set("strictQuery", true);
 mongoose
   .connect(MONGO_URL)
   .then(() => {
