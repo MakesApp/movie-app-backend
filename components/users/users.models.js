@@ -4,7 +4,12 @@ import { model, Schema } from 'mongoose';
 import findOrCreate from 'mongoose-findorcreate';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import dotenv from 'dotenv';
+import { Strategy as JwtStrategy } from 'passport-jwt';
+import { ExtractJwt as ExtractJwt } from 'passport-jwt';
 dotenv.config();
+const opts = {};
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.secretOrKey = process.env.JWT_SECRET;
 
 const userSchema = new Schema({
 	username: { type: String },
@@ -39,6 +44,23 @@ passport.deserializeUser(function (user, cb) {
 		return cb(null, user);
 	});
 });
+
+passport.use(
+	new JwtStrategy(opts, function (jwt_payload, done) {
+		User.findOne({ id: jwt_payload.id }, function (err, user) {
+			if (err) {
+				return done(err, false);
+			}
+			if (user) {
+				return done(null, user);
+			} else {
+				return done(null, false);
+				// or you could create a new account
+			}
+		});
+	})
+);
+
 passport.use(
 	new GoogleStrategy(
 		{

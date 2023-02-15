@@ -7,9 +7,12 @@ import { userRouter } from './components/users/users.routes.js';
 import './services/DB/mongoose.js';
 import './services/logger/index.js';
 import dotenv from 'dotenv';
+
 dotenv.config();
+
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
 
@@ -22,10 +25,9 @@ app.get('/homepage', function (req, res) {
 app.get('/login', function (req, res) {
 	res.render('pages/login');
 });
-
 app.use(
 	session({
-		secret: 'outlittlesecret',
+		secret: process.env.JWT_SECRET,
 		resave: false,
 		saveUninitialized: false,
 	})
@@ -57,6 +59,20 @@ app.get(
 		successRedirect: '/homepage',
 		failureRedirect: '/login',
 	})
+);
+
+app.get(
+	'/protected',
+	passport.authenticate('jwt', { session: false }),
+	(req, res) => {
+		return res.status(200).send({
+			success: true,
+			user: {
+				id: req.user._id,
+				username: req.user.username,
+			},
+		});
+	}
 );
 
 app.listen(PORT, () => {

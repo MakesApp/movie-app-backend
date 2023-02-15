@@ -1,54 +1,75 @@
-import passport from 'passport';
 import { User } from './users.models.js';
-export const createUser = (req, res) => {
-	User.register(
-		{ username: req.body.username },
-		req.body.password,
-		function (err) {
-			if (err) {
-				console.log('error');
-				res.send(err);
-			} else {
-				passport.authenticate('local')(req, res, function () {
-					res.send('user was creating successfully ...');
+import { hashSync, compareSync } from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
+export const usersController = {
+	createUser: (req, res) => {
+		const user = new User({
+			username: req.body.username,
+			password: hashSync(req.body.password, 10),
+		});
+
+		user
+			.save()
+			.then((user) => {
+				res.send({
+					success: true,
+					message: 'User created successfully.',
+					user: {
+						id: user._id,
+						username: user.username,
+					},
+				});
+			})
+			.catch((err) => {
+				res.send({
+					success: false,
+					message: 'Something went wrong',
+					error: err,
+				});
+			});
+	},
+	login: (req, res) => {
+		User.findOne({ username: req.body.username }).then((user) => {
+			//No user found
+			if (!user) {
+				return res.status(401).send({
+					success: false,
+					message: 'Could not find the user.',
 				});
 			}
-		}
-	);
-};
 
-export const login = async (req, res) => {
-	const user = new User({
-		username: req.body.username,
-		password: req.body.password,
-	});
-	req.login(user, function (err) {
-		if (err) {
-			console.log(err);
-		} else {
-			passport.authenticate('local')(req, res, function () {
-				res.status(200).send('user signed in ..');
+			//Incorrect password
+			if (!compareSync(req.body.password, user.password)) {
+				return res.status(401).send({
+					success: false,
+					message: 'Incorrect password',
+				});
+			}
+
+			const payload = {
+				username: user.username,
+				id: user._id,
+			};
+
+			const token = jwt.sign(payload, process.env.JWT_SECRET, {
+				expiresIn: '1d',
 			});
-		}
-	});
+
+			return res.status(200).send({
+				success: true,
+				message: 'Logged in successfully!',
+				token: 'Bearer ' + token,
+			});
+		});
+	},
+
+	logout: (req, res, next) => {
+		req.logout(function (err) {
+			if (err) {
+				return next(err);
+			}
+		});
+		res.send('logging out');
+	},
 };
-
-export const logout = (req, res, next) => {
-	req.logout(function (err) {
-		if (err) {
-			return next(err);
-		}
-	});
-	res.send('logging out');
-};
-
-// export const googleAuth = () => {
-// 	passport.authenticate('google', { scope: ['email', 'profile'] });
-// };
-
-// export const resFromGoogle = () => {
-// 	passport.authenticate('google', {
-// 		successRedirect: '/movies',
-// 		failureRedirect: '/login',
-// 	});
-// };
