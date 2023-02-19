@@ -1,19 +1,10 @@
 import { Router } from 'express';
 
-import {
-	getDetailedMovie,
-	getLatestMovies,
-	getTopMovies,
-	searchMovie,
-	getRandomGreatMovies,
-} from './movie.controllers.js';
+import { moviesController } from './movie.controllers.js';
 
 const movieRouter = Router();
 
-movieRouter.get('/random', getRandomGreatMovies);
-movieRouter.get('/latest', getLatestMovies);
-movieRouter.get('/:id', getDetailedMovie);
-movieRouter.get('/movies/getTopMovies', getTopMovies);
-movieRouter.get('/searchMovie', searchMovie);
+movieRouter.get('/latest', moviesController.getLatestMovies);
+movieRouter.get('/:id', moviesController.getDetailedMovie);
 
 export default movieRouter;

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { asyncWrapper } from '../../middleware/asyncWrapper.js';
 import { shuffleArray } from '../../utils/helper.js';
 import {
 	defaultActorPoster,
@@ -7,9 +8,9 @@ import {
 	TMDB_IMAGE_URL,
 } from './movies.constants.js';
 
-export const getLatestMovies = async (req, res) => {
-	const { limit = 20 } = req.query;
-	try {
+export const moviesController = {
+	getLatestMovies: asyncWrapper(async (req, res) => {
+		const { limit = 20 } = req.query;
 		const tmdbResponse = await axios.get(
 			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}`
 		);
@@ -21,10 +22,10 @@ export const getLatestMovies = async (req, res) => {
 			year: new Date(movie.release_date).getYear(),
 			id: movie.id,
 		}));
-
 		const omdbResponse = await axios.get(
 			`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&type=movie&y=2023&r=json&s=movie`
 		);
+
 		const omdbData = omdbResponse.data;
 		const omdbMovies = omdbData.Search.map((movie) => ({
 			name: movie.Title,
@@ -33,16 +34,12 @@ export const getLatestMovies = async (req, res) => {
 			year: movie.Year,
 			id: movie.imdbID,
 		}));
-
+		res.send(omdbMovies);
 		const latestMovies = [...omdbMovies, ...tmdbMovies].slice(0, limit);
 		res.status(200).send(latestMovies);
-	} catch (err) {
-		res.status(400).send({ error: err.message });
-	}
-};
+	}),
 
-export const getDetailedMovie = async (req, res) => {
-	try {
+	getDetailedMovie: asyncWrapper(async (req, res) => {
 		const { id } = req.params;
 
 		const tmdbResponse = await axios.get(
@@ -90,13 +87,9 @@ export const getDetailedMovie = async (req, res) => {
 					  },
 		};
 		res.status(200).send(movieData);
-	} catch (error) {
-		res.status(404).send({ error: error.message });
-	}
-};
+	}),
 
-export const getRandomGreatMovies = async (req, res) => {
-	try {
+	getRandomGreatMovies: asyncWrapper(async (req, res) => {
 		const page = req.query.page || 1;
 		const response = await axios.get(
 			`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${page}`
@@ -112,13 +105,9 @@ export const getRandomGreatMovies = async (req, res) => {
 		}));
 		const shuffledMovies = shuffleArray(topMovies);
 		res.send(shuffledMovies);
-	} catch (error) {
-		res.status(500).send(error);
-	}
-};
+	}),
 
-export const getTopMovies = async (req, res) => {
-	try {
+	getTopMovies: asyncWrapper(async (req, res) => {
 		const page = req.query.page || 1;
 
 		const response = await axios.get(
@@ -135,13 +124,9 @@ export const getTopMovies = async (req, res) => {
 		}));
 
 		res.send(topMovies);
-	} catch (err) {
-		res.status(500).send(err);
-	}
-};
+	}),
 
-export const searchMovie = async (req, res) => {
-	try {
+	searchMovie: asyncWrapper(async (req, res) => {
 		const searchTerm = req.query.searchTerm;
 		const response = await axios.get(
 			`${TMDB_API_URL}?api_key=${process.env.TMDB_API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`
@@ -165,7 +150,5 @@ export const searchMovie = async (req, res) => {
 			}
 		});
 		res.send({ movies, actors });
-	} catch (err) {
-		res.status(500).send(err);
-	}
+	}),
 };
