@@ -1,9 +1,15 @@
 import axios from 'axios';
 import { asyncWrapper } from '../../middleware/asyncWrapper.js';
-import { defaultActorPoster, defaultPoster } from './movies.constants.js';
+import { shuffleArray } from '../../utils/helper.js';
+import {
+	defaultActorPoster,
+	defaultPoster,
+	TMDB_API_URL,
+	TMDB_IMAGE_URL,
+} from './movies.constants.js';
+
 export const moviesController = {
-	// eslint-disable-next-line no-unused-vars
-	getLatestMovies: asyncWrapper(async (req, res, next) => {
+	getLatestMovies: asyncWrapper(async (req, res) => {
 		const { limit = 20 } = req.query;
 		const tmdbResponse = await axios.get(
 			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}`
@@ -81,5 +87,68 @@ export const moviesController = {
 					  },
 		};
 		res.status(200).send(movieData);
+	}),
+
+	getRandomGreatMovies: asyncWrapper(async (req, res) => {
+		const page = req.query.page || 1;
+		const response = await axios.get(
+			`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${page}`
+		);
+		const data = response.data;
+		let topMovies = data.results.map((movie) => ({
+			name: movie.title,
+			rating: movie.vote_average,
+			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+			year: new Date(movie.release_date).getYear(),
+			id: movie.id,
+			description: movie.overview,
+		}));
+		const shuffledMovies = shuffleArray(topMovies);
+		res.send(shuffledMovies);
+	}),
+
+	getTopMovies: asyncWrapper(async (req, res) => {
+		const page = req.query.page || 1;
+
+		const response = await axios.get(
+			`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${page}`
+		);
+		const data = response.data;
+
+		const topMovies = data.results.map((movie) => ({
+			name: movie.title,
+			rating: movie.vote_average,
+			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+			year: movie.release_date.slice(0, 4),
+			id: movie.id,
+		}));
+
+		res.send(topMovies);
+	}),
+
+	searchMovie: asyncWrapper(async (req, res) => {
+		const searchTerm = req.query.searchTerm;
+		const response = await axios.get(
+			`${TMDB_API_URL}?api_key=${process.env.TMDB_API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`
+		);
+		const results = response.data.results;
+		const movies = [];
+		const actors = [];
+		results.forEach((result) => {
+			if (result.media_type === 'movie') {
+				movies.push({
+					name: result.title,
+					rating: result.vote_average,
+					poster: `${TMDB_IMAGE_URL}${result.poster_path}`,
+					year: result.release_date.substring(0, 4),
+				});
+			} else if (result.media_type === 'person') {
+				actors.push({
+					name: result.name,
+					poster: `${TMDB_IMAGE_URL}${result.profile_path}`,
+				});
+			}
+		});
+		res.send({ movies, actors });
 	}),
 };
