@@ -19,6 +19,7 @@ const userSchema = new Schema({
 			if (value.length < 8) throw Error('min length of password is 8 digits !');
 		},
 	},
+	favorites: [],
 	googleId: { type: String },
 });
 

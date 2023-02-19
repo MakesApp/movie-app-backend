@@ -1,0 +1,480 @@
+{
+  message: 'Movie validation failed: director: Path `director` is required., genre: Validator failed for path `genre` with value `xs`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T07:45:53.060Z'
+}
+{
+  message: 'Movie validation failed: genre: Validator failed for path `genre` with value `xs`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T07:47:07.390Z'
+}
+{
+  message: 'Movie validation failed: genre: Validator failed for path `genre` with value `xs`',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-03T07:50:01.477Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:44:51.121Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:45:40.320Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:46:25.712Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:52:19.608Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:52:44.303Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:55:45.282Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:55:56.444Z'
+}
+{
+  message: 'Request failed with status code 403',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-08T11:56:51.042Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:29:09.735Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:30:54.423Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:31:07.485Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:53:22.554Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:54:01.326Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:56:32.122Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:33.171Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:45.095Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:57:58.183Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:11.764Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:46.381Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:58:57.178Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:14.482Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:17.917Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:28.170Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T13:59:28.783Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:28.154Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:39.494Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:00:57.634Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:01:16.219Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:01:39.596Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:19:49.504Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:22:34.246Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:22:57.137Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:23:37.149Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:24:57.510Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:25:26.614Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:26:55.321Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:28:40.294Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:29:06.804Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:30:00.947Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:30:44.617Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:31:18.823Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:32:27.580Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:32:55.865Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:33:40.632Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:34:00.386Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:35:59.461Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:36:28.410Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:37:29.058Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:38:12.564Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:39:20.255Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:40:01.279Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:41:23.178Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:43:13.256Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:43:29.589Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:44:31.255Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:45:16.969Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:48:47.320Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:49:45.159Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:53:59.029Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:54:13.411Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:54:31.712Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:56:16.857Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:56:46.303Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:34.485Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T14:57:53.640Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:04:13.850Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:04:57.177Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:21.245Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:22.751Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:05:54.270Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:07:26.320Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:07:59.485Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:02.818Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:13.762Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:09:40.044Z'
+}
+{
+  message: 'res.status.send is not a function',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:10:11.162Z'
+}
+{
+  message: 'Movie validation failed: number: Path `number` is required.',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-12T15:13:38.433Z'
+}
