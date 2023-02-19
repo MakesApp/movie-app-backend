@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Passport from 'passport';
+// import Passport from 'passport';
 import { usersController } from './users.controllers.js';
 
 export const userRouter = Router();
@@ -7,7 +7,7 @@ export const userRouter = Router();
 userRouter.post('/register', usersController.createUser);
 userRouter.post(
 	'/login',
-	Passport.authenticate('jwt', { session: false }),
+	// Passport.authenticate('jwt', { session: false }),
 	usersController.login
 );
 userRouter.get('/logout', usersController.logout);

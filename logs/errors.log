@@ -478,3 +478,9 @@
   service: 'user-service',
   timestamp: '2023-02-12T15:13:38.433Z'
 }
+{
+  message: "Cannot read properties of null (reading 'password')",
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-19T15:24:00.553Z'
+}

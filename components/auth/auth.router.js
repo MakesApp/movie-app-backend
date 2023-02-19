@@ -14,3 +14,11 @@ authRouter.get(
 		failureRedirect: '/login',
 	})
 );
+
+authRouter.get(
+	'/auth/google/movie-app',
+	passport.authenticate('google', {
+		successRedirect: '/homepage',
+		failureRedirect: '/login',
+	})
+);

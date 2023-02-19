@@ -33,21 +33,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('api/users', userRouter);
+app.use('/api/users', userRouter);
 app.use('/api/movies', movieRouter);
 app.use('/auth', authRouter);
-app.get(
-	'/auth/google',
-	passport.authenticate('google', { scope: ['email', 'profile'] })
-);
-
-app.get(
-	'/auth/google/movie-app',
-	passport.authenticate('google', {
-		successRedirect: '/homepage',
-		failureRedirect: '/login',
-	})
-);
 
 app.use(morgan('dev'));
 app.options('*', cors());
