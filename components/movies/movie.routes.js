@@ -6,6 +6,6 @@ const movieRouter = Router();
 
 movieRouter.get('/latest', moviesController.getLatestMovies);
 movieRouter.get('/:id', moviesController.getDetailedMovie);
-movieRouter.get('/searchMovie', moviesController.searchMovie);
+movieRouter.get('/search/movie', moviesController.searchMovie);
 
 export default movieRouter;
