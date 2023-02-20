@@ -8,6 +8,9 @@ import dotenv from 'dotenv';
 import movieRouter from './components/movies/movie.routes.js';
 import { notFoundRoute } from './middleware/not-found-middleware.js';
 import { errorHandlerMiddleware } from './middleware/error-handler-middleware.js';
+import cookieSession from 'cookie-session';
+import Passport from 'passport';
+import { authRoute } from './routes/auth.js';
 
 dotenv.config();
 
@@ -17,7 +20,19 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 app.options('*', cors());
-app.use(cors());
+app.use(
+	cors({
+		origin: 'http://localhost:3000',
+		methods: 'GET,POST,PUT,DELETE',
+		credentials: true,
+	})
+);
+app.use(
+	cookieSession({ name: 'session', keys: ['lama'], maxAge: 24 * 60 * 60 * 100 })
+);
+app.use(Passport.initialize());
+app.use(Passport.session());
+app.use('/auth', authRoute);
 
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
