@@ -478,3 +478,15 @@
   service: 'user-service',
   timestamp: '2023-02-12T15:13:38.433Z'
 }
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-21T13:47:51.771Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-21T13:49:36.852Z'
+}

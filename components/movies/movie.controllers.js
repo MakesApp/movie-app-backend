@@ -10,6 +10,7 @@ import {
 
 export const moviesController = {
 	getLatestMovies: asyncWrapper(async (req, res) => {
+		console.log('am');
 		const { limit = 20 } = req.query;
 		const tmdbResponse = await axios.get(
 			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}`
