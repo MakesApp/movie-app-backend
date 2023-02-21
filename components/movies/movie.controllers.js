@@ -11,6 +11,7 @@ import {
 export const moviesController = {
 	getLatestMovies: asyncWrapper(async (req, res) => {
 		const { limit = 20 } = req.query;
+
 		const tmdbResponse = await axios.get(
 			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}`
 		);
@@ -41,17 +42,25 @@ export const moviesController = {
 
 	getDetailedMovie: asyncWrapper(async (req, res) => {
 		const { id } = req.params;
-
 		const tmdbResponse = await axios.get(
 			`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_API_KEY}`
 		);
 		const tmdbData = tmdbResponse.data;
-
 		const omdbResponse = await axios.get(
 			`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${id}`
 			// `http://www.omdbapi.com/?apikey=ad0870b9&i=tt14317038`
 		);
 		const omdbData = omdbResponse.data;
+
+		const creditsResponse = await axios.get(
+			`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.TMDB_API_KEY}`
+		);
+		const creditsData = creditsResponse.data;
+		const actors = creditsData.cast?.map((actor) => ({
+			name: actor.name,
+			character: actor.character,
+			image: actor.profile_path || defaultActorPoster,
+		}));
 
 		const movieData = {
 			poster: tmdbData.poster_path || omdbData.Poster,
@@ -71,20 +80,12 @@ export const moviesController = {
 			genre: tmdbData.genres.map((genre) => genre.name),
 			director: omdbData.Director || 'N/A',
 			writers: omdbData.Writer || 'N/A',
-			actors:
-				tmdbData.credits && tmdbData.credits.cast
-					? tmdbData.credits.cast.map((actor) => ({
-							name: actor.name,
-							character: actor.character,
-							image: actor.profile_path || defaultActorPoster,
-					  }))
-					: {
-							runTime: omdbData.Runtime || 'N/A',
-							plot: omdbData.Plot || 'N/A',
-							tagLine: tmdbData.tagline,
-							trailers: [],
-							language: tmdbData.original_language,
-					  },
+			actors: actors,
+			runTime: omdbData.Runtime || 'N/A',
+			plot: omdbData.Plot || 'N/A',
+			tagLine: tmdbData.tagline,
+			trailers: [],
+			language: tmdbData.original_language,
 		};
 		res.status(200).send(movieData);
 	}),
