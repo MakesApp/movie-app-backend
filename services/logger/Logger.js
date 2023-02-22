@@ -38,7 +38,9 @@ function buildProdLogger() {
 				tailable: true,
 				zippedArchive: true,
 				format: combine(timestamp(), prettyPrint()),
-				rotationFormat: (options) => {
+				rotationFormat: (
+					options = { baseName: 'requests', extension: '.log' }
+				) => {
 					const date = new Date();
 					date.setDate(date.getDate() - 3);
 					const formattedDate = date.toISOString().slice(0, 10);
