@@ -2,7 +2,7 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 // import { Strategy as GithubStrategy } from 'passport-github2';
 // import { Strategy as FacebookStrategy } from 'passport-facebook';
 import passport from 'passport';
-
+import { User } from '../components/users/users.models';
 const GOOGLE_CLIENT_ID = process.env.CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.CLIENT_SECRET;
 
@@ -21,11 +21,15 @@ passport.use(
 		},
 		function (accessToken, refreshToken, profile, done) {
 			done(null, profile);
+			User.findOrCreate({ googleId: profile.id }, function (err, user) {
+				return done(err, user);
+			});
 		}
 	)
 );
 
 // passport.use(
+
 // 	new GithubStrategy(
 // 		{
 // 			clientID: GITHUB_CLIENT_ID,
@@ -51,10 +55,18 @@ passport.use(
 // 	)
 // );
 
-passport.serializeUser((user, done) => {
-	done(null, user);
+passport.serializeUser(function (user, cb) {
+	process.nextTick(function () {
+		return cb(null, {
+			id: user.id,
+			username: user.username,
+			picture: user.picture,
+		});
+	});
 });
 
-passport.deserializeUser((user, done) => {
-	done(null, user);
+passport.deserializeUser(function (user, cb) {
+	process.nextTick(function () {
+		return cb(null, user);
+	});
 });

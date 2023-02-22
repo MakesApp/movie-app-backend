@@ -1,7 +1,8 @@
 import express from 'express';
 import passport from 'passport';
 export const authRoute = express.Router();
-const CLIENT_URL = 'http://localhost:3000/';
+const CLIENT_URL =
+	process.env.NODE_ENV === 'production' ? '' : process.env.LOCAL_URL;
 
 authRoute.get('/login/success', (req, res) => {
 	if (req.user) {
@@ -26,7 +27,7 @@ authRoute.get('/logout', (req, res) => {
 });
 
 authRoute.get(
-	'/google',
+	'/auth/google',
 	passport.authenticate('google', { scope: ['profile'] })
 );
 

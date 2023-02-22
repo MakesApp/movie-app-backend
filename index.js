@@ -28,7 +28,11 @@ app.use(
 	})
 );
 app.use(
-	cookieSession({ name: 'session', keys: ['lama'], maxAge: 24 * 60 * 60 * 100 })
+	cookieSession({
+		name: 'session',
+		keys: [process.env.COOKIES_KEYS],
+		maxAge: 24 * 60 * 60 * 100,
+	})
 );
 app.use(Passport.initialize());
 app.use(Passport.session());
