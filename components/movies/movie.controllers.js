@@ -3,7 +3,6 @@ import { asyncWrapper } from '../../middleware/asyncWrapper.js';
 import { shuffleArray } from '../../utils/helper.js';
 import {
 	defaultActorPoster,
-	defaultPoster,
 	TMDB_API_URL,
 	TMDB_IMAGE_URL,
 } from './movies.constants.js';
@@ -13,31 +12,18 @@ export const moviesController = {
 		const { limit = 20 } = req.query;
 
 		const tmdbResponse = await axios.get(
-			`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}`
+			`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.TMDB_API_KEY}&language=en-US&page?limit=${limit}&sort_by=release_date.desc&primary_release_date.gte=2022-01-01&primary_release_date.lte=2023-01-01`
 		);
 		const tmdbData = tmdbResponse.data;
 		const tmdbMovies = tmdbData.results.map((movie) => ({
 			name: movie.title,
 			rating: movie.vote_average,
 			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
-			year: new Date(movie.release_date).getYear(),
+			year: new Date(movie.release_date).getFullYear(),
 			id: movie.id,
 		}));
-		const omdbResponse = await axios.get(
-			`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&type=movie&y=2023&r=json&s=movie`
-		);
 
-		const omdbData = omdbResponse.data;
-		const omdbMovies = omdbData.Search.map((movie) => ({
-			name: movie.Title,
-			rating: movie.imdbRating,
-			poster: movie.Poster === 'N/A' ? defaultPoster : movie.Poster,
-			year: movie.Year,
-			id: movie.imdbID,
-		}));
-		res.send(omdbMovies);
-		const latestMovies = [...omdbMovies, ...tmdbMovies].slice(0, limit);
-		res.status(200).send(latestMovies);
+		res.status(200).send(tmdbMovies);
 	}),
 
 	getDetailedMovie: asyncWrapper(async (req, res) => {
