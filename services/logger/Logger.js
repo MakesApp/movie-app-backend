@@ -22,8 +22,31 @@ function buildProdLogger() {
 		defaultMeta: { service: 'user-service' },
 		transports: [
 			new transports.Console(),
-			new transports.File({ filename: 'logs/errors.log', level: 'error' }),
-			new transports.File({ filename: 'logs/requests.log' }),
+			new transports.File({
+				filename: 'logs/errors.log',
+				level: 'error',
+				maxsize: 1024 * 1024,
+				maxFiles: 10,
+				tailable: true,
+				zippedArchive: true,
+				format: combine(timestamp(), prettyPrint()),
+			}),
+			new transports.File({
+				filename: 'logs/requests.log',
+				maxsize: 1024 * 1024,
+				maxFiles: 10,
+				tailable: true,
+				zippedArchive: true,
+				format: combine(timestamp(), prettyPrint()),
+				rotationFormat: (
+					options = { baseName: 'requests', extension: '.log' }
+				) => {
+					const date = new Date();
+					date.setDate(date.getDate() - 3);
+					const formattedDate = date.toISOString().slice(0, 10);
+					return `${options.baseName}.${formattedDate}${options.extension}`;
+				},
+			}),
 		],
 	});
 }
