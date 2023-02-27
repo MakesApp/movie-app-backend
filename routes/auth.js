@@ -1,27 +1,18 @@
 import express from 'express';
 import passport from 'passport';
 export const authRoute = express.Router();
-const CLIENT_URL =
-	process.env.NODE_ENV === 'production' ? '' : process.env.LOCAL_URL;
+const CLIENT_URL = process.env.CLIENT_URL;
 
-authRoute.get('/login/success', (req, res) => {
+authRoute.get('auth/login/success', (req, res) => {
 	if (req.user) {
-		res.status(200).json({
-			success: true,
-			message: 'successfull',
-			user: req.user,
-		});
+		res.status(200).send(req.user);
 	}
 });
-
-authRoute.get('/login/failed', (req, res) => {
-	res.status(401).json({
-		success: false,
-		message: 'failure',
-	});
+authRoute.get('auth/login/failed', (req, res) => {
+	res.status(400).send('login failed!!');
 });
 
-authRoute.get('/logout', (req, res) => {
+authRoute.get('auth/logout', (req, res) => {
 	req.logout();
 	res.redirect(CLIENT_URL);
 });
@@ -35,9 +26,21 @@ authRoute.get(
 	'/google/callback',
 	passport.authenticate('google', {
 		successRedirect: CLIENT_URL,
-		failureRedirect: '/login/failed',
+		failureRedirect: 'auth/login/failed',
 	})
 );
+
+// authRoute.get(
+// 	'/current',
+// 	passport.authenticate('user-rule', { session: false }),
+// 	(req, res) => {
+// 		res.json({
+// 			id: req.user.id,
+// 			username: req.user.username,
+// 			email: req.user.email,
+// 		});
+// 	}
+// );
 
 // authRoute.get(
 // 	'/github',

@@ -478,3 +478,99 @@
   service: 'user-service',
   timestamp: '2023-02-12T15:13:38.433Z'
 }
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:12:58.109Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:12:58.631Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:12:58.643Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:12:58.939Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:22:11.064Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:22:11.212Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:25:12.997Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:25:13.405Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:27:19.894Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:27:20.053Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:28:25.707Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T08:28:25.883Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T09:29:00.914Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T09:29:01.338Z'
+}
+{
+  message: 'Request failed with status code 404',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T11:19:11.189Z'
+}
+{
+  message: 'Cannot set headers after they are sent to the client',
+  level: 'error',
+  service: 'user-service',
+  timestamp: '2023-02-27T11:19:11.401Z'
+}

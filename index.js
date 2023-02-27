@@ -21,22 +21,22 @@ app.use(morgan('dev'));
 
 app.options('*', cors());
 app.use(
-	cors({
-		origin: 'http://localhost:3000',
-		methods: 'GET,POST,PUT,DELETE',
-		credentials: true,
-	})
-);
-app.use(
 	cookieSession({
 		name: 'session',
 		keys: [process.env.COOKIES_KEYS],
 		maxAge: 24 * 60 * 60 * 100,
 	})
 );
+app.use(
+	cors({
+		origin: 'http://localhost:3000',
+		methods: 'GET,POST,PUT,DELETE',
+		credentials: true,
+	})
+);
 app.use(Passport.initialize());
 app.use(Passport.session());
-app.use('/auth', authRoute);
+app.use('/api', authRoute);
 
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
