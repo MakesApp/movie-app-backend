@@ -21,7 +21,6 @@ function buildProdLogger() {
 		levels,
 		defaultMeta: { service: 'user-service' },
 		transports: [
-			new transports.Console(),
 			new transports.File({
 				filename: 'logs/errors.log',
 				level: 'error',
