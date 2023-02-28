@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-
+import userModel from '../../components/users/users.models';
 passport.use(
 	new GoogleStrategy(
 		{
@@ -10,7 +10,15 @@ passport.use(
 			passReqToCallback: true,
 		},
 		function (request, accessToken, refreshToken, profile, done) {
-			return done(null, profile);
+			const user = userModel.findAndModify({
+				query: { googleId: profile.id },
+				update: {
+					$setOnInsert: { googleId: profile.id },
+				},
+				new: true, // return new doc if one is upserted
+				upsert: true, // insert the document if it does not exist
+			});
+			done(null, user);
 		}
 	)
 );
