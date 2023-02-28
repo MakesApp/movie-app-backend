@@ -11,6 +11,7 @@ import passport from 'passport';
 import './services/auth/google-auth.js';
 import session from 'express-session';
 import authRouter from './components/auth/auth.route.js';
+import movieRouter from './components/movies/movie.routes.js';
 dotenv.config();
 
 const app = express();
@@ -44,6 +45,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/auth', authRouter);
+app.use('/api/movies', movieRouter);
 
 app.use(errorHandlerMiddleware);
 app.use(notFoundRoute);
