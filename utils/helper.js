@@ -21,3 +21,25 @@ export const shuffleArray = (array, shuffledItems = array.length) => {
 	}
 	return newData;
 };
+
+export const filterByQuery = (
+	from,
+	to,
+	minmumRating,
+	minmumVotes,
+	genre,
+	runTime
+) => {
+	let uri;
+	if (from)
+		uri += `&vote_count.gte=100&sort_by=vote_average.desc&primary_release_date.gte=${from}`;
+	if (to)
+		uri += `&vote_count.gte=100&sort_by=vote_average.desc&primary_release_date.lte=${to}`;
+	if (minmumRating)
+		uri += `&vote_count.gte=${minmumVotes}&sort_by=vote_average.desc`;
+	if (minmumVotes)
+		uri += `&vote_count.gte=100&sort_by=vote_average.desc&with_genres=${genre}`;
+	if (runTime)
+		uri += `&vote_count.gte=100&with_runtime.lte=${runTime}&sort_by=vote_average.desc`;
+	return uri;
+};
