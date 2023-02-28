@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import passport from 'passport';
+import { authController } from './auth.controller.js';
 
 const authRouter = Router();
 // function isLoggedIn(req, res, next) {
@@ -28,5 +29,7 @@ authRouter.get('/logout', (req, res) => {
 authRouter.get('/auth/google/failure', (req, res) => {
 	res.send('Failed to authenticate..');
 });
+authRouter.post('/login', authController.login);
+authRouter.post('/register', authController.register);
 
 export default authRouter;

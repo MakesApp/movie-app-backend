@@ -9,6 +9,7 @@ import { notFoundRoute } from './middleware/not-found-middleware.js';
 import { errorHandlerMiddleware } from './middleware/error-handler-middleware.js';
 import passport from 'passport';
 import './services/auth/google-auth.js';
+import './services/auth/auth-jwt.js';
 import session from 'express-session';
 import authRouter from './components/auth/auth.route.js';
 dotenv.config();
@@ -50,6 +51,6 @@ app.use(notFoundRoute);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+app.listen(8080, () => {
 	console.log(`Server started on port ${PORT}`);
 });
