@@ -8,5 +8,6 @@ movieRouter.get('/latest', moviesController.getLatestMovies);
 movieRouter.get('/getTopMovies', moviesController.getTopMovies);
 movieRouter.get('/:id', moviesController.getDetailedMovie);
 movieRouter.get('/search/movie', moviesController.searchMovie);
+movieRouter.get('/advancesearch/movie', moviesController.advanceSearch);
 
 export default movieRouter;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { asyncWrapper } from '../../middleware/asyncWrapper.js';
-import { shuffleArray } from '../../utils/helper.js';
+import { filterByQuery, shuffleArray } from '../../utils/helper.js';
 import {
 	defaultActorPoster,
 	TMDB_API_URL,
@@ -138,5 +138,30 @@ export const moviesController = {
 			}
 		});
 		res.send({ movies, actors });
+	}),
+	advanceSearch: asyncWrapper(async (req, res) => {
+		const from = req.query.from;
+		const to = req.query.to;
+		const MinmumRating = req.query.MinmumRating;
+		const MinmumVotes = req.query.MinmumVotes;
+		const Genre = req.query.Genre;
+		const RunTime = req.query.RunTime;
+		let response;
+		const baseurl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
+		response = await axios.get(
+			baseurl +
+				filterByQuery(from, to, MinmumRating, MinmumVotes, Genre, RunTime)
+		);
+		const felterdresults = response.data.results;
+		const movieresult = [];
+		felterdresults.forEach((r) => {
+			movieresult.push({
+				name: r.title,
+				rating: r.vote_average,
+				poster: `${TMDB_IMAGE_URL}${r.poster_path}`,
+				year: r.release_date.substring(0, 4),
+			});
+		});
+		res.send({ movieresult });
 	}),
 };
