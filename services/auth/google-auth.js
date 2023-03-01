@@ -10,15 +10,17 @@ passport.use(
 			passReqToCallback: true,
 		},
 		async function (request, accessToken, refreshToken, profile, done) {
-			const user = await userModel.findOneAndUpdate({
-				query: { googleId: profile.id },
-				update: {
-					$setOnInsert: { googleId: profile.id },
-				},
-				new: true, // return new doc if one is upserted
-				upsert: true, // insert the document if it does not exist
-			});
-			done(null, user);
+			let response;
+			const user = await userModel.findOne({ googleId: profile.id });
+			if (user) response = user;
+			else {
+				const newUser = new userModel({
+					googleId: profile.id,
+					profile: profile.picture,
+				});
+				response = await newUser.save();
+			}
+			done(null, response);
 		}
 	)
 );
