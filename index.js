@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use('/api/auth', authRouter);
+app.use('', authRouter);
 app.use('/api/movies', movieRouter);
 
 app.use(errorHandlerMiddleware);
