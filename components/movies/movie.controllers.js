@@ -125,6 +125,7 @@ export const moviesController = {
 		results.forEach((result) => {
 			if (result.media_type === 'movie') {
 				movies.push({
+					id: result.id,
 					name: result.title,
 					rating: result.vote_average,
 					poster: `${TMDB_IMAGE_URL}${result.poster_path}`,
@@ -132,6 +133,7 @@ export const moviesController = {
 				});
 			} else if (result.media_type === 'person') {
 				actors.push({
+					id: result.id,
 					name: result.name,
 					poster: `${TMDB_IMAGE_URL}${result.profile_path}`,
 				});
