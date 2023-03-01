@@ -9,8 +9,8 @@ passport.use(
 			callbackURL: process.env.GOOGLE_CALLBACK_URL,
 			passReqToCallback: true,
 		},
-		function (request, accessToken, refreshToken, profile, done) {
-			const user = userModel.findAndModify({
+		async function (request, accessToken, refreshToken, profile, done) {
+			const user = await userModel.findOneAndUpdate({
 				query: { googleId: profile.id },
 				update: {
 					$setOnInsert: { googleId: profile.id },
