@@ -24,7 +24,16 @@ authRouter.get('/logout', (req, res) => {
 	req.session.destroy();
 	res.send('Goodbye!');
 });
-
+authRouter.get('/login/success', (req, res) => {
+	if (req.user) {
+		res.status(200).json({
+			success: true,
+			message: 'successfull',
+			user: req.user,
+			//   cookies: req.cookies
+		});
+	}
+});
 authRouter.get('/auth/google/failure', (req, res) => {
 	res.send('Failed to authenticate..');
 });
