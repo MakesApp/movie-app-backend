@@ -7,12 +7,12 @@ const authRouter = Router();
 // }
 
 authRouter.get(
-	'/auth/google',
+	'/google',
 	passport.authenticate('google', { scope: ['email', 'profile'] })
 );
 
 authRouter.get(
-	'/auth/google/callback',
+	'/google/callback',
 	passport.authenticate('google', {
 		successRedirect: process.env.CLIENT_URL,
 		failureRedirect: '/auth/google/failure',
@@ -34,7 +34,7 @@ authRouter.get('/login/success', (req, res) => {
 		});
 	}
 });
-authRouter.get('/auth/google/failure', (req, res) => {
+authRouter.get('/google/failure', (req, res) => {
 	res.send('Failed to authenticate..');
 });
 
