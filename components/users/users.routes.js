@@ -3,6 +3,7 @@ import {
 	getUserFavorites,
 	addUserFavorite,
 	removeUserFavorite,
+	addWatchLater,
 } from './users.controllers.js';
 
 const userRoutes = Router();
@@ -13,5 +14,6 @@ userRoutes.delete(
 	'/user/:userId/movies/:movieId/favorites',
 	removeUserFavorite
 );
+userRoutes.get('/user/:userId/movies/watchLater', addWatchLater);
 
 export default userRoutes;
