@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
+	userName: String,
+	password: String,
 	googleId: String,
 	profile: String,
 	favorites: [],

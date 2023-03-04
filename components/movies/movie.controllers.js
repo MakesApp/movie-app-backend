@@ -9,7 +9,6 @@ import {
 
 export const moviesController = {
 	getLatestMovies: asyncWrapper(async (req, res) => {
-		console.log('am');
 		const { limit = 20 } = req.query;
 
 		const tmdbResponse = await axios.get(

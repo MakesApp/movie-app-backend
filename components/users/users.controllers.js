@@ -1,5 +1,7 @@
-import { User } from './users.models.js';
-
+import { asyncWrapper } from '../../middleware/asyncWrapper.js';
+import User from './users.models.js';
+import bcrypt from 'bcryptjs';
+import passport from 'passport';
 export const addUserFavorite = async (req, res) => {
 	try {
 		const userId = req.params.userId;
@@ -51,3 +53,21 @@ export const removeUserFavorite = async (req, res) => {
 		res.status(500).send(err);
 	}
 };
+
+export const register = asyncWrapper(async (req, res) => {
+	const { password, userName } = req.body;
+	User.findOne({ userName }, async (err, doc) => {
+		if (err) throw err;
+		if (doc) res.send({ message: 'User Already Exists' });
+		if (!doc) {
+			const hashedPassword = await bcrypt.hash(password, 10);
+
+			const newUser = new User({
+				userName: userName,
+				password: hashedPassword,
+			});
+			await newUser.save();
+			res.send('User Created');
+		}
+	});
+});
