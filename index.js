@@ -7,45 +7,43 @@ import './services/logger/index.js';
 import dotenv from 'dotenv';
 import { notFoundRoute } from './middleware/not-found-middleware.js';
 import { errorHandlerMiddleware } from './middleware/error-handler-middleware.js';
+import api from './api/index.js';
 import passport from 'passport';
-import './services/auth/google-auth.js';
+import './services/auth/passportGoogleSSO.js';
+import './services/auth/passport.js';
 import session from 'express-session';
-import authRouter from './components/auth/auth.route.js';
-import movieRouter from './components/movies/movie.routes.js';
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 app.use(
 	session({
 		secret: process.env.SECRET_SESSION,
-		resave: false,
+		resave: true,
 		saveUninitialized: true,
 	})
 );
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.options('*', cors());
-app.use(cors());
+// app.use((req, res, next) => {
+// 	res.header('Access-Control-Allow-Origin', '*');
+// 	res.header('Access-Control-Allow-Credentials', 'true');
+// 	res.header(
+// 		'Access-Control-Allow-Methods',
+// 		'GET, POST, PUT, DELETE, PATCH, HEAD'
+// 	);
+// 	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+// 	logger.info(`${req.method} ${req.originalUrl}`);
+// 	next();
+// });
+// Passport
 
-app.use((req, res, next) => {
-	res.header('Access-Control-Allow-Origin', '*');
-	res.header('Access-Control-Allow-Credentials', 'true');
-	res.header(
-		'Access-Control-Allow-Methods',
-		'GET, POST, PUT, DELETE, PATCH, HEAD'
-	);
-	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-	logger.info(`${req.method} ${req.originalUrl}`);
-	next();
-});
-
-app.use('/auth', authRouter);
-app.use('/api/movies', movieRouter);
+app.use('/api', api);
 
 app.use(errorHandlerMiddleware);
 app.use(notFoundRoute);
