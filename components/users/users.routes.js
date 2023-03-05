@@ -26,8 +26,20 @@ userRouter.delete(
 	isUserAuthenticated,
 	removeUserFavorite
 );
-userRouter.get('/:userId/movies/watchLater', getWatchLater);
-userRouter.post('/:userId/movies/watchLater/add', addWatchLater);
-userRouter.delete('/:userId/movies/watchLater/:movieId', removeWatchLater);
+userRouter.get(
+	'/:userId/movies/watchLater',
+	isUserAuthenticated,
+	getWatchLater
+);
+userRouter.post(
+	'/:userId/movies/watchLater/add',
+	isUserAuthenticated,
+	addWatchLater
+);
+userRouter.delete(
+	'/:userId/movies/watchLater/:movieId',
+	isUserAuthenticated,
+	removeWatchLater
+);
 
 export default userRouter;
