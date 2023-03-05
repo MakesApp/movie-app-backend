@@ -1,31 +1,31 @@
+import { Strategy as LocalStrategy } from 'passport-local';
+import bcrypt from 'bcrypt';
 import passport from 'passport';
 import User from '../../components/users/users.models.js';
-import bcrypt from 'bcrypt';
-import { Strategy as LocalStrategy } from 'passport-local';
 
-const authenticateUser = (userName, password, done) => {
-	User.findOne({ userName }).then((user) => {
-		if (!user) return done(null, false, { message: 'failed to find user' });
-
-		bcrypt
-			.compare(password, user.password)
-			.then((isMatch) => {
-				if (isMatch) {
+passport.use(
+	new LocalStrategy((username, password, done) => {
+		User.findOne({ username: username }, (err, user) => {
+			if (err) throw err;
+			if (!user) return done(null, false);
+			bcrypt.compare(password, user.password, (err, result) => {
+				if (err) throw err;
+				if (result === true) {
 					return done(null, user);
 				} else {
-					return done(null, false, { message: 'password incorrect' });
+					return done(null, false);
 				}
-			})
-			.catch((e) => done(e));
-	});
-};
-passport.use(new LocalStrategy(authenticateUser));
+			});
+		});
+	})
+);
 
-passport.serializeUser((user, done) => {
-	done(null, user.id);
+passport.serializeUser((user, cb) => {
+	cb(null, user._id);
 });
-passport.deserializeUser((id, done) => {
+
+passport.deserializeUser((id, cb) => {
 	User.findOne({ _id: id }, (err, user) => {
-		done(err, user);
+		cb(err, user);
 	});
 });

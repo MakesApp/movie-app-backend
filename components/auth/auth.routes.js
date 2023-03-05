@@ -1,26 +1,31 @@
 import express from 'express';
 import passport from 'passport';
 import isUserAuthenticated from '../../middleware/isUserAuthenticated.js';
-const googleAuthRouter = express.Router();
+import { register } from './auth.controller.js';
+const authRouter = express.Router();
 
-googleAuthRouter.get(
+authRouter.get(
 	'/auth/google',
 	passport.authenticate('google', { scope: ['profile'] })
 );
 
-googleAuthRouter.get(
+authRouter.get(
 	'/auth/google/callback',
 	passport.authenticate('google'),
 	(req, res) => {
 		res.redirect(process.env.CLIENT_URL);
 	}
 );
-googleAuthRouter.get('/logout', (req, res) => {
+authRouter.get('/logout', (req, res) => {
 	req.logout();
 	res.redirect(process.env.CLIENT_URL);
 });
-googleAuthRouter.get('/auth/user', (req, res) => {
-	console.log(req.isAuthenticated());
+authRouter.get('/auth/user', isUserAuthenticated, (req, res) => {
 	res.json(req.user);
 });
-export default googleAuthRouter;
+authRouter.post('/auth/register', register);
+authRouter.post('/auth/login', passport.authenticate('local'), (req, res) => {
+	res.send('success');
+});
+
+export default authRouter;

@@ -9,25 +9,20 @@ import { notFoundRoute } from './middleware/not-found-middleware.js';
 import { errorHandlerMiddleware } from './middleware/error-handler-middleware.js';
 import api from './api/index.js';
 import passport from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
-import cookieSession from 'cookie-session';
-import bcrypt from 'bcrypt';
 import './services/auth/passportGoogleSSO.js';
-// import './services/auth/passport';
-
+import './services/auth/passport.js';
 import session from 'express-session';
-import User from './components/users/users.models.js';
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 app.use(
 	session({
-		secret: 'secretcode',
+		secret: process.env.SECRET_SESSION,
 		resave: true,
 		saveUninitialized: true,
 	})
@@ -47,53 +42,6 @@ app.use(passport.session());
 // 	next();
 // });
 // Passport
-passport.use(
-	new LocalStrategy((username, password, done) => {
-		User.findOne({ username: username }, (err, user) => {
-			if (err) throw err;
-			if (!user) return done(null, false);
-			bcrypt.compare(password, user.password, (err, result) => {
-				if (err) throw err;
-				if (result === true) {
-					return done(null, user);
-				} else {
-					return done(null, false);
-				}
-			});
-		});
-	})
-);
-
-passport.serializeUser((user, cb) => {
-	cb(null, user._id);
-});
-
-passport.deserializeUser((id, cb) => {
-	User.findOne({ _id: id }, (err, user) => {
-		cb(err, user);
-	});
-});
-
-// Routes
-app.post('/register', async (req, res) => {
-	const { username, password } = req.body;
-	User.findOne({ username }, async (err, doc) => {
-		if (err) throw err;
-		if (doc) res.send('User Already Exists');
-		if (!doc) {
-			const hashedPassword = await bcrypt.hash(password, 10);
-			const newUser = new User({
-				username,
-				password: hashedPassword,
-			});
-			await newUser.save();
-			res.send('success');
-		}
-	});
-});
-app.post('/login', passport.authenticate('local'), (req, res) => {
-	res.send('success');
-});
 
 app.use('/api', api);
 
