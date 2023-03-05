@@ -1,5 +1,5 @@
-import { User } from './users.models.js';
-
+import { asyncWrapper } from '../../middleware/asyncWrapper.js';
+import User from './users.models.js';
 export const addUserFavorite = async (req, res) => {
 	try {
 		const userId = req.params.userId;
