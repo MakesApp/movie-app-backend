@@ -28,17 +28,17 @@ userRouter.delete(
 );
 userRouter.get(
 	'/:userId/movies/watchLater',
-	isUserAuthenticated,
+	// isUserAuthenticated,
 	getWatchLater
 );
 userRouter.post(
 	'/:userId/movies/watchLater/add',
-	isUserAuthenticated,
+	// isUserAuthenticated,
 	addWatchLater
 );
 userRouter.delete(
 	'/:userId/movies/watchLater/:movieId',
-	isUserAuthenticated,
+	// isUserAuthenticated,
 	removeWatchLater
 );
 
