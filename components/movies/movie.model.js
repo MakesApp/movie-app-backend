@@ -2,19 +2,24 @@ const mongoose = require('mongoose');
 
 const movieSchema = new mongoose.Schema({
 	movieId: {
-		type: String,
+		type: mongoose.Schema.Types.ObjectId,
 		required: true,
 	},
-	rating: {
-		type: Number,
-		min: 1,
-		max: 5,
-		required: true,
-	},
+	ratings: [
+		{
+			rating: {
+				type: Number,
+				min: 1,
+				max: 5,
+				required: true,
+			},
+			userId: mongoose.Schema.Types.ObjectId,
+		},
+	],
 	reviews: [
 		{
 			userId: {
-				type: String,
+				type: mongoose.Schema.Types.ObjectId,
 				required: true,
 			},
 			content: {
