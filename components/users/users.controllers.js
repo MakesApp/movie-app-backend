@@ -51,3 +51,40 @@ export const removeUserFavorite = async (req, res) => {
 		res.status(500).send(err);
 	}
 };
+
+export const getWatchLater = asyncWrapper(async (req, res) => {
+	const { userId } = req.params;
+	const user = await User.findById(userId);
+	if (!user) {
+		return res.status(404).send('User not found');
+	}
+	return res.send(user);
+});
+
+export const addWatchLater = asyncWrapper(async (req, res) => {
+	const userId = req.params.userId;
+	const movieId = req.body.movieId;
+	const user = await User.findById(userId);
+
+	if (!user) return res.status(404).send('User not found');
+	user.watchLater.push(movieId);
+
+	const result = await user.save();
+	res.send(result);
+});
+
+export const removeWatchLater = asyncWrapper(async (req, res) => {
+	const userId = req.params.userId;
+	const movieId = req.params.movieId;
+	const user = await User.findById(userId);
+
+	if (!user) {
+		return res.status(404).send('User not found');
+	}
+	const foundMovie = user.watchLater.find((movie) => movie === movieId);
+	if (!foundMovie) return res.status(404).send({ message: 'Movie not found' });
+	user.watchLater = user.watchLater.filter((movie) => movie !== movieId);
+
+	const result = await user.save();
+	res.send(result);
+});
