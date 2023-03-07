@@ -81,6 +81,8 @@ export const moviesController = {
 		const response = await axios.get(
 			`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${page}`
 		);
+		console.log(response);
+
 		const data = response.data;
 		let topMovies = data.results.map((movie) => ({
 			name: movie.title,
