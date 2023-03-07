@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { asyncWrapper } from '../../middleware/asyncWrapper.js';
 import User from './users.models.js';
 export const addUserFavorite = async (req, res) => {
@@ -58,7 +59,23 @@ export const getWatchLater = asyncWrapper(async (req, res) => {
 	if (!user) {
 		return res.status(404).send('User not found');
 	}
-	return res.send(user);
+	const data = await Promise.all(
+		user.watchLater.map(async (movieId) => {
+			const tmdbResponse = await axios.get(
+				`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.TMDB_API_KEY}`
+			);
+			const movie = tmdbResponse.data;
+			return {
+				name: movie.title,
+				rating: movie.vote_average.toFixed(1),
+				poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+				year: new Date(movie.release_date).getFullYear(),
+				id: movie.id,
+			};
+		})
+	);
+
+	return res.send(data);
 });
 
 export const addWatchLater = asyncWrapper(async (req, res) => {
@@ -75,7 +92,7 @@ export const addWatchLater = asyncWrapper(async (req, res) => {
 
 export const removeWatchLater = asyncWrapper(async (req, res) => {
 	const userId = req.params.userId;
-	const movieId = req.params.movieId;
+	const movieId = req.body.movieId;
 	const user = await User.findById(userId);
 
 	if (!user) {

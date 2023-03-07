@@ -17,7 +17,7 @@ export const moviesController = {
 		const tmdbData = tmdbResponse.data;
 		const tmdbMovies = tmdbData.results.map((movie) => ({
 			name: movie.title,
-			rating: movie.vote_average,
+			rating: movie.vote_average.toFixed(1),
 			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
 			year: new Date(movie.release_date).getFullYear(),
 			id: movie.id,
@@ -86,7 +86,7 @@ export const moviesController = {
 		const data = response.data;
 		let topMovies = data.results.map((movie) => ({
 			name: movie.title,
-			rating: movie.vote_average,
+			rating: movie.vote_average.toFixed(1),
 			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
 			year: new Date(movie.release_date).getYear(),
 			id: movie.id,
@@ -106,7 +106,7 @@ export const moviesController = {
 
 		const topMovies = data.results.map((movie) => ({
 			name: movie.title,
-			rating: movie.vote_average,
+			rating: movie.vote_average.toFixed(1),
 			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
 			year: movie.release_date.slice(0, 4),
 			id: movie.id,
@@ -128,7 +128,7 @@ export const moviesController = {
 				movies.push({
 					id: result.id,
 					name: result.title,
-					rating: result.vote_average,
+					rating: result.vote_average.toFixed(1),
 					poster: `${TMDB_IMAGE_URL}${result.poster_path}`,
 					year: result.release_date.substring(0, 4),
 				});
@@ -160,7 +160,7 @@ export const moviesController = {
 		felterdresults.forEach((r) => {
 			movieresult.push({
 				name: r.title,
-				rating: r.vote_average,
+				rating: r.vote_average.toFixed(1),
 				poster: `${TMDB_IMAGE_URL}${r.poster_path}`,
 				year: r.release_date.substring(0, 4),
 			});
