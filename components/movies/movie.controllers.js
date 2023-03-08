@@ -117,9 +117,13 @@ export const moviesController = {
 
 	searchMovie: asyncWrapper(async (req, res) => {
 		const searchTerm = req.query.searchTerm;
+		const page = req.query.page;
 		const response = await axios.get(
-			`${TMDB_API_URL}?api_key=${process.env.TMDB_API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`
+			`${TMDB_API_URL}?api_key=${
+				process.env.TMDB_API_KEY
+			}&language=en-US&query=${searchTerm}&page=${page.toString()}&include_adult=false`
 		);
+		const totalPages = response.data.total_pages;
 		const results = response.data.results;
 		const movies = [];
 		const actors = [];
@@ -140,7 +144,7 @@ export const moviesController = {
 				});
 			}
 		});
-		res.send({ movies, actors });
+		res.send({ movies, actors, totalPages });
 	}),
 	advanceSearch: asyncWrapper(async (req, res) => {
 		const from = req.query.from;
