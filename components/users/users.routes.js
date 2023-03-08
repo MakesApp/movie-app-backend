@@ -6,6 +6,9 @@ import {
 	removeUserFavorite,
 	addUserReview,
 	getMovieReviews,
+	getWatchLater,
+	addWatchLater,
+	removeWatchLater,
 } from './users.controllers.js';
 
 const userRouter = Router();
@@ -35,4 +38,8 @@ userRouter.get(
 	isUserAuthenticated,
 	getMovieReviews
 );
+userRouter.get('/:userId/movies/watchLater', getWatchLater);
+userRouter.post('/:userId/movies/watchLater/add', addWatchLater);
+userRouter.delete('/:userId/movies/watchLater/delete', removeWatchLater);
+
 export default userRouter;
