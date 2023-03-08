@@ -153,22 +153,26 @@ export const moviesController = {
 		const MinmumVotes = req.query.MinmumVotes;
 		const Genre = req.query.Genre;
 		const RunTime = req.query.RunTime;
+		const page = req.query.page;
 		let response;
-		const baseurl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
+		const baseurl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false`;
 		response = await axios.get(
 			baseurl +
-				filterByQuery(from, to, MinmumRating, MinmumVotes, Genre, RunTime)
+				filterByQuery(from, to, MinmumRating, MinmumVotes, Genre, RunTime) +
+				`&page=${page}`
 		);
+		console.log(req.query);
+		const totalPages = response.data.total_pages;
 		const felterdresults = response.data.results;
-		const movieresult = [];
+		const movies = [];
 		felterdresults.forEach((r) => {
-			movieresult.push({
+			movies.push({
 				name: r.title,
 				rating: r.vote_average.toFixed(1),
 				poster: `${TMDB_IMAGE_URL}${r.poster_path}`,
 				year: r.release_date.substring(0, 4),
 			});
 		});
-		res.send({ movieresult });
+		res.send({ movies, totalPages });
 	}),
 };
