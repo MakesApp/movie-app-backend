@@ -3,6 +3,7 @@ import { asyncWrapper } from '../../middleware/asyncWrapper.js';
 import { filterByQuery, shuffleArray } from '../../utils/helper.js';
 import {
 	defaultActorPoster,
+	defaultPoster,
 	TMDB_API_URL,
 	TMDB_IMAGE_URL,
 } from './movies.constants.js';
@@ -133,7 +134,7 @@ export const moviesController = {
 					id: result.id,
 					name: result.title,
 					rating: result.vote_average.toFixed(1),
-					poster: `${TMDB_IMAGE_URL}${result.poster_path}`,
+					poster: `${TMDB_IMAGE_URL}${result.poster_path}||${defaultPoster}`,
 					year: result.release_date.substring(0, 4),
 				});
 			} else if (result.media_type === 'person') {
