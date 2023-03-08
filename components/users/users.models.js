@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
 	googleId: String,
 	profile: String,
 	favorites: [],
+	watchLater: [String],
 });
 const User = mongoose.model('User', userSchema);
 export default User;

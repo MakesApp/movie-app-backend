@@ -18,7 +18,7 @@ export const moviesController = {
 		const tmdbData = tmdbResponse.data;
 		const tmdbMovies = tmdbData.results.map((movie) => ({
 			name: movie.title,
-			rating: movie.vote_average,
+			rating: movie.vote_average.toFixed(1),
 			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
 			year: new Date(movie.release_date).getFullYear(),
 			id: movie.id,
@@ -82,10 +82,12 @@ export const moviesController = {
 		const response = await axios.get(
 			`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${page}`
 		);
+		console.log(response);
+
 		const data = response.data;
 		let topMovies = data.results.map((movie) => ({
 			name: movie.title,
-			rating: movie.vote_average,
+			rating: movie.vote_average.toFixed(1),
 			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
 			year: new Date(movie.release_date).getYear(),
 			id: movie.id,
@@ -105,7 +107,7 @@ export const moviesController = {
 
 		const topMovies = data.results.map((movie) => ({
 			name: movie.title,
-			rating: movie.vote_average,
+			rating: movie.vote_average.toFixed(1),
 			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
 			year: movie.release_date.slice(0, 4),
 			id: movie.id,
@@ -116,9 +118,13 @@ export const moviesController = {
 
 	searchMovie: asyncWrapper(async (req, res) => {
 		const searchTerm = req.query.searchTerm;
+		const page = req.query.page;
 		const response = await axios.get(
-			`${TMDB_API_URL}?api_key=${process.env.TMDB_API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`
+			`${TMDB_API_URL}?api_key=${
+				process.env.TMDB_API_KEY
+			}&language=en-US&query=${searchTerm}&page=${page.toString()}&include_adult=false`
 		);
+		const totalPages = response.data.total_pages;
 		const results = response.data.results;
 		const movies = [];
 		const actors = [];
@@ -127,7 +133,7 @@ export const moviesController = {
 				movies.push({
 					id: result.id,
 					name: result.title,
-					rating: result.vote_average,
+					rating: result.vote_average.toFixed(1),
 					poster: `${TMDB_IMAGE_URL}${result.poster_path}`,
 					year: result.release_date.substring(0, 4),
 				});
@@ -139,7 +145,7 @@ export const moviesController = {
 				});
 			}
 		});
-		res.send({ movies, actors });
+		res.send({ movies, actors, totalPages });
 	}),
 	advanceSearch: asyncWrapper(async (req, res) => {
 		const from = req.query.from;
@@ -148,23 +154,27 @@ export const moviesController = {
 		const MinmumVotes = req.query.MinmumVotes;
 		const Genre = req.query.Genre;
 		const RunTime = req.query.RunTime;
+		const page = req.query.page;
 		let response;
-		const baseurl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
+		const baseurl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false`;
 		response = await axios.get(
 			baseurl +
-				filterByQuery(from, to, MinmumRating, MinmumVotes, Genre, RunTime)
+				filterByQuery(from, to, MinmumRating, MinmumVotes, Genre, RunTime) +
+				`&page=${page}`
 		);
+		console.log(req.query);
+		const totalPages = response.data.total_pages;
 		const felterdresults = response.data.results;
-		const movieresult = [];
+		const movies = [];
 		felterdresults.forEach((r) => {
-			movieresult.push({
+			movies.push({
 				name: r.title,
-				rating: r.vote_average,
+				rating: r.vote_average.toFixed(1),
 				poster: `${TMDB_IMAGE_URL}${r.poster_path}`,
 				year: r.release_date.substring(0, 4),
 			});
 		});
-		res.send({ movieresult });
+		res.send({ movies, totalPages });
 	}),
 	addMovieRating: asyncWrapper(async (req, res) => {
 		const { movieId, userId } = req.params;

@@ -3,7 +3,7 @@ import { Router } from 'express';
 import { moviesController } from './movie.controllers.js';
 
 const movieRouter = Router();
-
+movieRouter.get('/randomMovies', moviesController.getRandomGreatMovies);
 movieRouter.get('/latest', moviesController.getLatestMovies);
 movieRouter.get('/getTopMovies', moviesController.getTopMovies);
 movieRouter.get('/:id', moviesController.getDetailedMovie);
