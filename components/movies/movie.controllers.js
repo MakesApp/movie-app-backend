@@ -170,7 +170,7 @@ export const moviesController = {
 			movies.push({
 				name: r.title,
 				rating: r.vote_average.toFixed(1),
-				poster: `${TMDB_IMAGE_URL}${r.poster_path}`,
+				poster: `${TMDB_IMAGE_URL}||${r.poster_path}`,
 				year: r.release_date.substring(0, 4),
 			});
 		});
