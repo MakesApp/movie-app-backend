@@ -89,7 +89,6 @@ export const moviesController = {
 			name: movie.title,
 			rating: movie.vote_average.toFixed(1),
 			poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-			backdrop_path: `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`,
 			year: new Date(movie.release_date).getYear(),
 			id: movie.id,
 			description: movie.overview,
@@ -171,7 +170,7 @@ export const moviesController = {
 			movies.push({
 				name: r.title,
 				rating: r.vote_average.toFixed(1),
-				poster: `${TMDB_IMAGE_URL}||${r.poster_path}`,
+				poster: `${TMDB_IMAGE_URL}` || `${r.poster_path}`,
 				year: r.release_date.substring(0, 4),
 			});
 		});
