@@ -7,6 +7,7 @@ import {
 	TMDB_API_URL,
 	TMDB_IMAGE_URL,
 } from './movies.constants.js';
+import Movie from './movie.model.js';
 
 export const moviesController = {
 	getLatestMovies: asyncWrapper(async (req, res) => {
@@ -175,5 +176,20 @@ export const moviesController = {
 			});
 		});
 		res.send({ movies, totalPages });
+	}),
+	addMovieRating: asyncWrapper(async (req, res) => {
+		const { movieId, userId } = req.params;
+		const { rating } = req.body;
+		const movie = await Movie.findOne({ movieId });
+		if (!movie) return res.send({ message: 'movie was not found' });
+		const userIndex = movie.ratings.findIndex(
+			(element) => element.userId.toString() === userId.toString()
+		);
+
+		if (userIndex > -1) movie.ratings[userIndex] = { userId, rating };
+		else movie.ratings.push({ userId, rating });
+
+		const savedUser = await movie.save();
+		res.send(savedUser);
 	}),
 };
